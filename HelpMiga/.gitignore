@@ -1,0 +1,38 @@
+# file
+
+#########################################################################
+#                                                                       #
+#       Title         - .gitignore file                                 #
+#       For           - MAC OSX , Xcode7 and Swift Source projects      #
+#       Updated by    - Ramdhan Choudhary                               #
+#       Updated on    - 13 - November - 2015                            #
+#                                                                       #
+#########################################################################
+
+########### Xcode ###########
+# Xcode temporary files that should never be committed
+
+## Build generated
+build/
+DerivedData
+
+# NB: NIB/XIB files still exist even on Storyboard projects, so we want this
+*~.nib
+*.swp
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
