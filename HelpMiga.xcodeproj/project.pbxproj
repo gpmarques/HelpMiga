@@ -56,13 +56,10 @@
 		D1FD28271D59302B0067C134 /* HelpMiga */ = {
 			isa = PBXGroup;
 			children = (
-				D1FD28411D5933F60067C134 /* Git */,
-				D1FD28281D59302B0067C134 /* AppDelegate.swift */,
-				D1FD282A1D59302B0067C134 /* ViewController.swift */,
-				D1FD282C1D59302B0067C134 /* Main.storyboard */,
-				D1FD282F1D59302B0067C134 /* Assets.xcassets */,
-				D1FD28311D59302B0067C134 /* LaunchScreen.storyboard */,
-				D1FD28341D59302B0067C134 /* Info.plist */,
+				D1FD28471D59344E0067C134 /* Model */,
+				D1FD28461D5934490067C134 /* View */,
+				D1FD28451D5934430067C134 /* Controller */,
+				D1FD28441D59343A0067C134 /* Supporting Files */,
 			);
 			path = HelpMiga;
 			sourceTree = "<group>";
@@ -73,6 +70,41 @@
 				D1FD28421D5934170067C134 /* .gitignore */,
 			);
 			name = Git;
+			sourceTree = "<group>";
+		};
+		D1FD28441D59343A0067C134 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D1FD28281D59302B0067C134 /* AppDelegate.swift */,
+				D1FD282F1D59302B0067C134 /* Assets.xcassets */,
+				D1FD28341D59302B0067C134 /* Info.plist */,
+				D1FD28411D5933F60067C134 /* Git */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D1FD28451D5934430067C134 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1FD282A1D59302B0067C134 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D1FD28461D5934490067C134 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1FD282C1D59302B0067C134 /* Main.storyboard */,
+				D1FD28311D59302B0067C134 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D1FD28471D59344E0067C134 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
