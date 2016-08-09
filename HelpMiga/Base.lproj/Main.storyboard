@@ -7,14 +7,14 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Roboto-Italic.ttf">
-            <string>Roboto-Italic</string>
-            <string>Roboto-Italic</string>
-            <string>Roboto-Italic</string>
-            <string>Roboto-Italic</string>
-            <string>Roboto-Italic</string>
-            <string>Roboto-Italic</string>
-            <string>Roboto-Italic</string>
+        <mutableArray key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -39,7 +39,8 @@
                                     <constraint firstAttribute="height" constant="22" id="KcB-1e-ZXI"/>
                                     <constraint firstAttribute="width" constant="270" id="XdT-t0-k8p"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="18"/>
+                                <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emailField" translatesAutoresizingMaskIntoConstraints="NO" id="vGN-nj-cvX">
@@ -51,7 +52,8 @@
                                     <constraint firstAttribute="height" constant="22" id="oZl-Jl-ev3"/>
                                     <constraint firstAttribute="width" constant="270" id="sFP-SY-ymR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="18"/>
+                                <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwordField" translatesAutoresizingMaskIntoConstraints="NO" id="etV-zu-vpr">
@@ -143,7 +145,8 @@
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G44-qP-fmb">
                                 <rect key="frame" x="274" y="70" width="52" height="22"/>
-                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="18"/>
+                                <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emailFieldSignIn" translatesAutoresizingMaskIntoConstraints="NO" id="Iqh-va-quf">
@@ -151,7 +154,8 @@
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CZt-Uo-TOp">
                                 <rect key="frame" x="275" y="127" width="49" height="22"/>
-                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="18"/>
+                                <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneField" translatesAutoresizingMaskIntoConstraints="NO" id="58W-Mk-iyO">
@@ -159,7 +163,8 @@
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJ1-NQ-UgM">
                                 <rect key="frame" x="237" y="184" width="125" height="22"/>
-                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="18"/>
+                                <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwordField" translatesAutoresizingMaskIntoConstraints="NO" id="CNY-Nc-DSB">
@@ -167,7 +172,8 @@
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A6T-Js-BPr">
                                 <rect key="frame" x="257" y="241" width="84.5" height="22"/>
-                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="18"/>
+                                <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwordField" translatesAutoresizingMaskIntoConstraints="NO" id="sdX-IM-Q4l">
@@ -175,7 +181,8 @@
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yPq-3k-mmk">
                                 <rect key="frame" x="227" y="298" width="145.5" height="22"/>
-                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="18"/>
+                                <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SxR-Vq-guI" userLabel="idImageView">
@@ -295,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VkY-8B-HMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280" y="1168"/>
+            <point key="canvasLocation" x="280" y="1016"/>
         </scene>
     </scenes>
     <resources>
