@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C77BF566496E63B54941C3BC075E8E95C8F2C904",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C77BF566496E63B54941C3BC075E8E95C8F2C904" : 0,
+    "74B7D14A585B53B813BB34FC32514E8B6CB45C6B" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CB8E0E2D-8C92-4A39-87EC-CE7A845D1D32",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C77BF566496E63B54941C3BC075E8E95C8F2C904" : "HelpMiga_atual\/",
+    "74B7D14A585B53B813BB34FC32514E8B6CB45C6B" : "BEPiD\/HelpMiga_final\/HelpMiga\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "HelpMiga",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "HelpMiga.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/belapereiras\/HelpMiga.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "74B7D14A585B53B813BB34FC32514E8B6CB45C6B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gpmarques\/HelpMiga.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C77BF566496E63B54941C3BC075E8E95C8F2C904"
+    }
+  ]
+}
