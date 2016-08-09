@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E55132B1D5A5326006860EB /* AskHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E55132A1D5A5326006860EB /* AskHelpViewController.swift */; };
+		6E55132D1D5A5338006860EB /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E55132C1D5A5338006860EB /* RequestsViewController.swift */; };
+		6E55132F1D5A5345006860EB /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E55132E1D5A5345006860EB /* PicturesViewController.swift */; };
+		6E5513311D5A5350006860EB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5513301D5A5350006860EB /* ProfileViewController.swift */; };
 		6EBE97481D5A363F00DFC9B1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBE97471D5A363F00DFC9B1 /* SignInViewController.swift */; };
 		D1FD28291D59302B0067C134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD28281D59302B0067C134 /* AppDelegate.swift */; };
 		D1FD282B1D59302B0067C134 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD282A1D59302B0067C134 /* LoginViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E55132A1D5A5326006860EB /* AskHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskHelpViewController.swift; sourceTree = "<group>"; };
+		6E55132C1D5A5338006860EB /* RequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
+		6E55132E1D5A5345006860EB /* PicturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
+		6E5513301D5A5350006860EB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6EBE97411D5A310900DFC9B1 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Black.ttf"; path = "../../BEPiD/HelpMiga_final/HelpMiga/MapKitTutorial/Roboto-Black.ttf"; sourceTree = "<group>"; };
 		6EBE97421D5A310900DFC9B1 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BlackItalic.ttf"; path = "../../BEPiD/HelpMiga_final/HelpMiga/MapKitTutorial/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		6EBE97431D5A310900DFC9B1 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../BEPiD/XCode Projects/HelpMiga_CloudKit/MapKitTutorial/Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -70,6 +78,10 @@
 			children = (
 				6EBE97471D5A363F00DFC9B1 /* SignInViewController.swift */,
 				D1FD282A1D59302B0067C134 /* LoginViewController.swift */,
+				6E55132A1D5A5326006860EB /* AskHelpViewController.swift */,
+				6E55132C1D5A5338006860EB /* RequestsViewController.swift */,
+				6E55132E1D5A5345006860EB /* PicturesViewController.swift */,
+				6E5513301D5A5350006860EB /* ProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -184,9 +196,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E55132D1D5A5338006860EB /* RequestsViewController.swift in Sources */,
 				D1FD282B1D59302B0067C134 /* LoginViewController.swift in Sources */,
+				6E55132B1D5A5326006860EB /* AskHelpViewController.swift in Sources */,
 				D1FD28291D59302B0067C134 /* AppDelegate.swift in Sources */,
+				6E5513311D5A5350006860EB /* ProfileViewController.swift in Sources */,
 				6EBE97481D5A363F00DFC9B1 /* SignInViewController.swift in Sources */,
+				6E55132F1D5A5345006860EB /* PicturesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
