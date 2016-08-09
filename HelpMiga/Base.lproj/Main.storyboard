@@ -10,6 +10,11 @@
         <mutableArray key="Roboto-Italic.ttf">
             <string>Roboto-Italic</string>
             <string>Roboto-Italic</string>
+            <string>Roboto-Italic</string>
+            <string>Roboto-Italic</string>
+            <string>Roboto-Italic</string>
+            <string>Roboto-Italic</string>
+            <string>Roboto-Italic</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -64,6 +69,7 @@
                                         <state key="normal" backgroundImage="signInButton"/>
                                         <connections>
                                             <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wZV-aR-EJE"/>
+                                            <segue destination="Cx4-HJ-K7t" kind="presentation" id="6Xd-FZ-G1s"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBU-PC-ZLA">
@@ -117,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="280" y="318"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="bs4-vJ-3xr">
             <objects>
-                <viewController id="Cx4-HJ-K7t" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignIn" id="Cx4-HJ-K7t" customClass="SignInViewController" customModule="HelpMiga" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gC7-yF-7Q7"/>
                         <viewControllerLayoutGuide type="bottom" id="VAw-VB-5OS"/>
@@ -128,20 +134,183 @@
                     <view key="view" contentMode="scaleToFill" id="Xal-wk-nO8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBG" translatesAutoresizingMaskIntoConstraints="NO" id="bWL-j4-DdG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emailField" translatesAutoresizingMaskIntoConstraints="NO" id="fEK-Ix-1cu">
+                                <rect key="frame" x="16" y="60" width="568" height="42"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G44-qP-fmb">
+                                <rect key="frame" x="274" y="70" width="52" height="22"/>
+                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emailFieldSignIn" translatesAutoresizingMaskIntoConstraints="NO" id="Iqh-va-quf">
+                                <rect key="frame" x="154" y="117" width="291" height="42"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CZt-Uo-TOp">
+                                <rect key="frame" x="275" y="127" width="49" height="22"/>
+                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneField" translatesAutoresizingMaskIntoConstraints="NO" id="58W-Mk-iyO">
+                                <rect key="frame" x="154" y="174" width="291" height="42"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJ1-NQ-UgM">
+                                <rect key="frame" x="237" y="184" width="125" height="22"/>
+                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwordField" translatesAutoresizingMaskIntoConstraints="NO" id="CNY-Nc-DSB">
+                                <rect key="frame" x="154" y="231" width="291" height="42"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A6T-Js-BPr">
+                                <rect key="frame" x="257" y="241" width="84.5" height="22"/>
+                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwordField" translatesAutoresizingMaskIntoConstraints="NO" id="sdX-IM-Q4l">
+                                <rect key="frame" x="154" y="288" width="291" height="42"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yPq-3k-mmk">
+                                <rect key="frame" x="227" y="298" width="145.5" height="22"/>
+                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SxR-Vq-guI" userLabel="idImageView">
+                                <rect key="frame" x="218" y="405" width="51" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="51" id="Oe9-GP-00O"/>
+                                    <constraint firstAttribute="height" constant="60" id="sCu-YM-yyx"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bQi-u7-dff" userLabel="selfieImageView">
+                                <rect key="frame" x="325" y="405" width="51" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2ia-TV-LjK"/>
+                                    <constraint firstAttribute="width" constant="51" id="u4D-hh-ePw"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="ehu-dc-hk5">
+                                <rect key="frame" x="228" y="404" width="145" height="62"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR6-fD-vk2" userLabel="idButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="62"/>
+                                        <state key="normal" backgroundImage="id_red"/>
+                                        <connections>
+                                            <action selector="idButton:" destination="Cx4-HJ-K7t" eventType="touchUpInside" id="JS6-3V-yN2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVf-ps-ElA" userLabel="selfieButton">
+                                        <rect key="frame" x="101" y="5" width="44" height="52"/>
+                                        <state key="normal" backgroundImage="selfie_red"/>
+                                        <connections>
+                                            <action selector="selfieButton:" destination="Cx4-HJ-K7t" eventType="touchUpInside" id="02Y-fa-Jlm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJE-Wz-Nch" userLabel="sendToApproval">
+                                <rect key="frame" x="177" y="491" width="245" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="GuP-wV-a5a"/>
+                                    <constraint firstAttribute="width" constant="245" id="Qar-4o-ixT"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="sendToApprovalButton"/>
+                                <connections>
+                                    <action selector="sendToApprovalButton:" destination="Cx4-HJ-K7t" eventType="touchUpInside" id="l2y-l5-T5J"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPictures" translatesAutoresizingMaskIntoConstraints="NO" id="2tJ-0P-tyC">
+                                <rect key="frame" x="177" y="350" width="245" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Eo2-fw-bU9"/>
+                                    <constraint firstAttribute="width" constant="245" id="Ou4-xr-S9L"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VB-Zz-d4L">
+                                <rect key="frame" x="20" y="20" width="15" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="SYU-MA-T4r"/>
+                                    <constraint firstAttribute="height" constant="26" id="V2R-v1-Ukc"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="XX3-MN-DIS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ehu-dc-hk5" firstAttribute="centerX" secondItem="Xal-wk-nO8" secondAttribute="centerX" id="5Pj-eE-wh2"/>
+                            <constraint firstItem="A6T-Js-BPr" firstAttribute="centerY" secondItem="CNY-Nc-DSB" secondAttribute="centerY" id="8B1-tN-l4R"/>
+                            <constraint firstItem="2tJ-0P-tyC" firstAttribute="top" secondItem="sdX-IM-Q4l" secondAttribute="bottom" constant="20" id="8cX-W7-UUh"/>
+                            <constraint firstItem="sdX-IM-Q4l" firstAttribute="top" secondItem="CNY-Nc-DSB" secondAttribute="bottom" constant="15" id="8gi-xS-uGd"/>
+                            <constraint firstItem="CNY-Nc-DSB" firstAttribute="centerX" secondItem="Xal-wk-nO8" secondAttribute="centerX" id="9sg-hc-dnV"/>
+                            <constraint firstItem="sdX-IM-Q4l" firstAttribute="centerX" secondItem="Xal-wk-nO8" secondAttribute="centerX" id="AyZ-NR-Pfj"/>
+                            <constraint firstItem="fEK-Ix-1cu" firstAttribute="centerX" secondItem="Xal-wk-nO8" secondAttribute="centerX" id="Eu1-Rs-2qS"/>
+                            <constraint firstItem="LJE-Wz-Nch" firstAttribute="centerX" secondItem="Xal-wk-nO8" secondAttribute="centerX" id="IAg-HR-ouR"/>
+                            <constraint firstItem="yPq-3k-mmk" firstAttribute="centerY" secondItem="sdX-IM-Q4l" secondAttribute="centerY" id="JMS-dc-cT0"/>
+                            <constraint firstItem="bWL-j4-DdG" firstAttribute="width" secondItem="Xal-wk-nO8" secondAttribute="width" id="JvZ-EX-DJu"/>
+                            <constraint firstItem="7VB-Zz-d4L" firstAttribute="top" secondItem="Xal-wk-nO8" secondAttribute="top" constant="20" id="KV1-0F-wnt"/>
+                            <constraint firstItem="CZt-Uo-TOp" firstAttribute="centerY" secondItem="Iqh-va-quf" secondAttribute="centerY" id="PHE-xx-DAf"/>
+                            <constraint firstItem="Iqh-va-quf" firstAttribute="centerX" secondItem="Xal-wk-nO8" secondAttribute="centerX" id="S2a-sV-0mk"/>
+                            <constraint firstItem="bWL-j4-DdG" firstAttribute="centerX" secondItem="Xal-wk-nO8" secondAttribute="centerX" id="Sd1-jw-NHJ"/>
+                            <constraint firstItem="G44-qP-fmb" firstAttribute="centerY" secondItem="fEK-Ix-1cu" secondAttribute="centerY" id="TUG-7u-7OE"/>
+                            <constraint firstItem="G44-qP-fmb" firstAttribute="centerX" secondItem="fEK-Ix-1cu" secondAttribute="centerX" id="UMS-g0-n2V"/>
+                            <constraint firstItem="2tJ-0P-tyC" firstAttribute="centerX" secondItem="Xal-wk-nO8" secondAttribute="centerX" id="UsF-er-fJB"/>
+                            <constraint firstAttribute="trailing" secondItem="fEK-Ix-1cu" secondAttribute="trailing" constant="16" id="UtH-na-pJS"/>
+                            <constraint firstItem="bWL-j4-DdG" firstAttribute="centerY" secondItem="Xal-wk-nO8" secondAttribute="centerY" id="WUd-LM-r98"/>
+                            <constraint firstItem="bQi-u7-dff" firstAttribute="centerY" secondItem="CVf-ps-ElA" secondAttribute="centerY" id="Y11-4c-Hyk"/>
+                            <constraint firstItem="58W-Mk-iyO" firstAttribute="top" secondItem="Iqh-va-quf" secondAttribute="bottom" constant="15" id="Yb2-QH-yOb"/>
+                            <constraint firstItem="7VB-Zz-d4L" firstAttribute="leading" secondItem="Xal-wk-nO8" secondAttribute="leading" constant="20" id="Z3J-Fo-Zc4"/>
+                            <constraint firstItem="58W-Mk-iyO" firstAttribute="centerX" secondItem="Xal-wk-nO8" secondAttribute="centerX" id="ZX9-zV-qcL"/>
+                            <constraint firstItem="RJ1-NQ-UgM" firstAttribute="centerY" secondItem="58W-Mk-iyO" secondAttribute="centerY" id="bH3-hM-67n"/>
+                            <constraint firstItem="yPq-3k-mmk" firstAttribute="centerX" secondItem="sdX-IM-Q4l" secondAttribute="centerX" id="bsf-gH-9qy"/>
+                            <constraint firstItem="RJ1-NQ-UgM" firstAttribute="centerX" secondItem="58W-Mk-iyO" secondAttribute="centerX" id="cgB-J6-rE0"/>
+                            <constraint firstItem="CNY-Nc-DSB" firstAttribute="top" secondItem="58W-Mk-iyO" secondAttribute="bottom" constant="15" id="fcB-h8-rzq"/>
+                            <constraint firstItem="fEK-Ix-1cu" firstAttribute="leading" secondItem="Xal-wk-nO8" secondAttribute="leading" constant="16" id="hJZ-0O-cbA"/>
+                            <constraint firstItem="bQi-u7-dff" firstAttribute="centerX" secondItem="CVf-ps-ElA" secondAttribute="centerX" id="nEF-up-EZy"/>
+                            <constraint firstItem="Iqh-va-quf" firstAttribute="top" secondItem="fEK-Ix-1cu" secondAttribute="bottom" constant="15" id="nFi-M4-zhG"/>
+                            <constraint firstItem="SxR-Vq-guI" firstAttribute="centerY" secondItem="KR6-fD-vk2" secondAttribute="centerY" id="pDD-if-liU"/>
+                            <constraint firstItem="fEK-Ix-1cu" firstAttribute="top" secondItem="gC7-yF-7Q7" secondAttribute="bottom" constant="40" id="r9D-ON-J4c"/>
+                            <constraint firstItem="A6T-Js-BPr" firstAttribute="centerX" secondItem="CNY-Nc-DSB" secondAttribute="centerX" id="vA3-nW-dUp"/>
+                            <constraint firstItem="bWL-j4-DdG" firstAttribute="height" secondItem="Xal-wk-nO8" secondAttribute="height" id="wnq-v8-mpG"/>
+                            <constraint firstItem="SxR-Vq-guI" firstAttribute="centerX" secondItem="KR6-fD-vk2" secondAttribute="centerX" id="xJ2-Jw-EjO"/>
+                            <constraint firstItem="ehu-dc-hk5" firstAttribute="top" secondItem="2tJ-0P-tyC" secondAttribute="bottom" constant="10" id="y9H-WF-nOd"/>
+                            <constraint firstItem="CZt-Uo-TOp" firstAttribute="centerX" secondItem="Iqh-va-quf" secondAttribute="centerX" id="yIn-pZ-geS"/>
+                            <constraint firstItem="LJE-Wz-Nch" firstAttribute="top" secondItem="ehu-dc-hk5" secondAttribute="bottom" constant="25" id="zdy-do-GXm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="CZt-Uo-TOp" id="gh2-Ma-Kxt"/>
+                        <outlet property="idImageView" destination="SxR-Vq-guI" id="iLG-4r-6xr"/>
+                        <outlet property="nameTextField" destination="G44-qP-fmb" id="bLT-V2-I0y"/>
+                        <outlet property="passwordTextField" destination="A6T-Js-BPr" id="6dh-N6-FER"/>
+                        <outlet property="phoneTextField" destination="RJ1-NQ-UgM" id="mpb-IM-jY4"/>
+                        <outlet property="repeatPasswordTextField" destination="yPq-3k-mmk" id="EWK-0h-DeM"/>
+                        <outlet property="selfieImageView" destination="bQi-u7-dff" id="Z8I-Nc-x3v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VkY-8B-HMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280" y="1002"/>
+            <point key="canvasLocation" x="280" y="1168"/>
         </scene>
     </scenes>
     <resources>
+        <image name="addPictures" width="244" height="44"/>
+        <image name="back" width="18" height="30"/>
         <image name="emailField" width="291" height="42"/>
+        <image name="emailFieldSignIn" width="291" height="42"/>
         <image name="helpMigaImage" width="151" height="124"/>
+        <image name="id_red" width="31" height="62"/>
         <image name="loginBG" width="320" height="568"/>
         <image name="loginButton" width="116" height="42"/>
         <image name="passwordField" width="291" height="42"/>
+        <image name="phoneField" width="291" height="42"/>
+        <image name="selfie_red" width="44" height="52"/>
+        <image name="sendToApprovalButton" width="225" height="42"/>
         <image name="signInButton" width="116" height="42"/>
     </resources>
 </document>
