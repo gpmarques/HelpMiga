@@ -20,23 +20,7 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func askHelpButton(sender: AnyObject) {
     }
-
-   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        checkLocationAuthorizationStatus()
-//        centerMapOnLocation(initialLocation)
-        
-        mapView.showsUserLocation = true
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+  
     func checkLocationAuthorizationStatus() {
         if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
             mapView.showsUserLocation = true
@@ -61,7 +45,20 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate {
                                                                   regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
-
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        checkLocationAuthorizationStatus()
+        //        centerMapOnLocation(initialLocation)
+        
+        mapView.showsUserLocation = true
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
 }

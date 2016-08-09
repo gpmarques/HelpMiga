@@ -41,6 +41,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "loginSegue" {
+        if emailTextField.text!.isEmpty == true || passwordTextField.text!.isEmpty == true {
+           return false
+        } else {
+            //fazer um if pra ver se o email e senha combinam
+            return true
+            }
+        } else {
+            return true
+        }
+    }
+    
     
     //MARK: TEXT FIELD + SCROLL VIEW
     

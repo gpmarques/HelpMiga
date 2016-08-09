@@ -23,6 +23,8 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profileImageView.layer.cornerRadius = 20
 
         // Do any additional setup after loading the view.
     }

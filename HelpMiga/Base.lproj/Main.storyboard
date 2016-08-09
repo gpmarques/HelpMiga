@@ -85,7 +85,7 @@
                                                 <state key="normal" backgroundImage="loginButton"/>
                                                 <connections>
                                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="82y-jt-jnL"/>
-                                                    <segue destination="CcF-4r-zPu" kind="presentation" id="pSg-6n-q7U"/>
+                                                    <segue destination="CcF-4r-zPu" kind="presentation" identifier="loginSegue" id="pSg-6n-q7U"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -444,66 +444,52 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emailField" translatesAutoresizingMaskIntoConstraints="NO" id="fEK-Ix-1cu">
-                                <rect key="frame" x="16" y="60" width="568" height="42"/>
+                                <rect key="frame" x="16" y="80" width="568" height="42"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G44-qP-fmb">
-                                <rect key="frame" x="274" y="70" width="52" height="22"/>
+                                <rect key="frame" x="274" y="90" width="52" height="22"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emailFieldSignIn" translatesAutoresizingMaskIntoConstraints="NO" id="Iqh-va-quf">
-                                <rect key="frame" x="154" y="117" width="291" height="42"/>
+                                <rect key="frame" x="154" y="137" width="291" height="42"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CZt-Uo-TOp">
-                                <rect key="frame" x="275" y="127" width="49" height="22"/>
+                                <rect key="frame" x="275" y="147" width="49" height="22"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneField" translatesAutoresizingMaskIntoConstraints="NO" id="58W-Mk-iyO">
-                                <rect key="frame" x="154" y="174" width="291" height="42"/>
+                                <rect key="frame" x="154" y="194" width="291" height="42"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJ1-NQ-UgM">
-                                <rect key="frame" x="237" y="184" width="125" height="22"/>
+                                <rect key="frame" x="237" y="204" width="125" height="22"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwordField" translatesAutoresizingMaskIntoConstraints="NO" id="CNY-Nc-DSB">
-                                <rect key="frame" x="154" y="231" width="291" height="42"/>
+                                <rect key="frame" x="154" y="251" width="291" height="42"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A6T-Js-BPr">
-                                <rect key="frame" x="257" y="241" width="84.5" height="22"/>
+                                <rect key="frame" x="257" y="261" width="84.5" height="22"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwordField" translatesAutoresizingMaskIntoConstraints="NO" id="sdX-IM-Q4l">
-                                <rect key="frame" x="154" y="288" width="291" height="42"/>
+                                <rect key="frame" x="154" y="308" width="291" height="42"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yPq-3k-mmk">
-                                <rect key="frame" x="227" y="298" width="145.5" height="22"/>
+                                <rect key="frame" x="227" y="318" width="145.5" height="22"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SxR-Vq-guI" userLabel="idImageView">
-                                <rect key="frame" x="218" y="405" width="51" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="51" id="Oe9-GP-00O"/>
-                                    <constraint firstAttribute="height" constant="60" id="sCu-YM-yyx"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bQi-u7-dff" userLabel="selfieImageView">
-                                <rect key="frame" x="325" y="405" width="51" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="2ia-TV-LjK"/>
-                                    <constraint firstAttribute="width" constant="51" id="u4D-hh-ePw"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="ehu-dc-hk5">
-                                <rect key="frame" x="228" y="404" width="145" height="62"/>
+                                <rect key="frame" x="228" y="424" width="145" height="62"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR6-fD-vk2" userLabel="idButton">
                                         <rect key="frame" x="0.0" y="0.0" width="31" height="62"/>
@@ -521,8 +507,22 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SxR-Vq-guI" userLabel="idImageView">
+                                <rect key="frame" x="218" y="424" width="51" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="51" id="Oe9-GP-00O"/>
+                                    <constraint firstAttribute="height" constant="62" id="sCu-YM-yyx"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bQi-u7-dff" userLabel="selfieImageView">
+                                <rect key="frame" x="325" y="424" width="51" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="2ia-TV-LjK"/>
+                                    <constraint firstAttribute="width" constant="51" id="u4D-hh-ePw"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJE-Wz-Nch" userLabel="sendToApproval">
-                                <rect key="frame" x="177" y="491" width="245" height="48"/>
+                                <rect key="frame" x="177" y="501" width="245" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="GuP-wV-a5a"/>
                                     <constraint firstAttribute="width" constant="245" id="Qar-4o-ixT"/>
@@ -533,17 +533,17 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPictures" translatesAutoresizingMaskIntoConstraints="NO" id="2tJ-0P-tyC">
-                                <rect key="frame" x="177" y="350" width="245" height="44"/>
+                                <rect key="frame" x="177" y="370" width="245" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Eo2-fw-bU9"/>
                                     <constraint firstAttribute="width" constant="245" id="Ou4-xr-S9L"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VB-Zz-d4L">
-                                <rect key="frame" x="20" y="20" width="15" height="26"/>
+                                <rect key="frame" x="20" y="30" width="25" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="15" id="SYU-MA-T4r"/>
-                                    <constraint firstAttribute="height" constant="26" id="V2R-v1-Ukc"/>
+                                    <constraint firstAttribute="width" constant="25" id="SYU-MA-T4r"/>
+                                    <constraint firstAttribute="height" constant="36" id="V2R-v1-Ukc"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="back"/>
                                 <connections>
@@ -563,7 +563,7 @@
                             <constraint firstItem="LJE-Wz-Nch" firstAttribute="centerX" secondItem="Xal-wk-nO8" secondAttribute="centerX" id="IAg-HR-ouR"/>
                             <constraint firstItem="yPq-3k-mmk" firstAttribute="centerY" secondItem="sdX-IM-Q4l" secondAttribute="centerY" id="JMS-dc-cT0"/>
                             <constraint firstItem="bWL-j4-DdG" firstAttribute="width" secondItem="Xal-wk-nO8" secondAttribute="width" id="JvZ-EX-DJu"/>
-                            <constraint firstItem="7VB-Zz-d4L" firstAttribute="top" secondItem="Xal-wk-nO8" secondAttribute="top" constant="20" id="KV1-0F-wnt"/>
+                            <constraint firstItem="7VB-Zz-d4L" firstAttribute="top" secondItem="Xal-wk-nO8" secondAttribute="top" constant="30" id="KV1-0F-wnt"/>
                             <constraint firstItem="CZt-Uo-TOp" firstAttribute="centerY" secondItem="Iqh-va-quf" secondAttribute="centerY" id="PHE-xx-DAf"/>
                             <constraint firstItem="Iqh-va-quf" firstAttribute="centerX" secondItem="Xal-wk-nO8" secondAttribute="centerX" id="S2a-sV-0mk"/>
                             <constraint firstItem="bWL-j4-DdG" firstAttribute="centerX" secondItem="Xal-wk-nO8" secondAttribute="centerX" id="Sd1-jw-NHJ"/>
@@ -584,13 +584,13 @@
                             <constraint firstItem="bQi-u7-dff" firstAttribute="centerX" secondItem="CVf-ps-ElA" secondAttribute="centerX" id="nEF-up-EZy"/>
                             <constraint firstItem="Iqh-va-quf" firstAttribute="top" secondItem="fEK-Ix-1cu" secondAttribute="bottom" constant="15" id="nFi-M4-zhG"/>
                             <constraint firstItem="SxR-Vq-guI" firstAttribute="centerY" secondItem="KR6-fD-vk2" secondAttribute="centerY" id="pDD-if-liU"/>
-                            <constraint firstItem="fEK-Ix-1cu" firstAttribute="top" secondItem="gC7-yF-7Q7" secondAttribute="bottom" constant="40" id="r9D-ON-J4c"/>
+                            <constraint firstItem="fEK-Ix-1cu" firstAttribute="top" secondItem="gC7-yF-7Q7" secondAttribute="bottom" constant="60" id="r9D-ON-J4c"/>
                             <constraint firstItem="A6T-Js-BPr" firstAttribute="centerX" secondItem="CNY-Nc-DSB" secondAttribute="centerX" id="vA3-nW-dUp"/>
                             <constraint firstItem="bWL-j4-DdG" firstAttribute="height" secondItem="Xal-wk-nO8" secondAttribute="height" id="wnq-v8-mpG"/>
                             <constraint firstItem="SxR-Vq-guI" firstAttribute="centerX" secondItem="KR6-fD-vk2" secondAttribute="centerX" id="xJ2-Jw-EjO"/>
                             <constraint firstItem="ehu-dc-hk5" firstAttribute="top" secondItem="2tJ-0P-tyC" secondAttribute="bottom" constant="10" id="y9H-WF-nOd"/>
                             <constraint firstItem="CZt-Uo-TOp" firstAttribute="centerX" secondItem="Iqh-va-quf" secondAttribute="centerX" id="yIn-pZ-geS"/>
-                            <constraint firstItem="LJE-Wz-Nch" firstAttribute="top" secondItem="ehu-dc-hk5" secondAttribute="bottom" constant="25" id="zdy-do-GXm"/>
+                            <constraint firstItem="LJE-Wz-Nch" firstAttribute="top" secondItem="ehu-dc-hk5" secondAttribute="bottom" constant="15" id="zdy-do-GXm"/>
                         </constraints>
                     </view>
                     <connections>
