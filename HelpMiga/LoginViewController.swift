@@ -33,6 +33,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             notifyUser("Ops!", message: "Todos os campos devem ser preenchidos")
         }
     }
+  
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "loginSegue" {
+            if emailTextField.text!.isEmpty == true || passwordTextField.text!.isEmpty == true {
+                return false
+            } else {
+                //fazer um if pra ver se o email e senha combinam
+                return true
+            }
+        } else {
+            return true
+        }
+    }
     
     // MARK: DISMISS KEYBOARD
     
@@ -41,24 +54,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if identifier == "loginSegue" {
-        if emailTextField.text!.isEmpty == true || passwordTextField.text!.isEmpty == true {
-           return false
-        } else {
-            //fazer um if pra ver se o email e senha combinam
-            return true
-            }
-        } else {
-            return true
-        }
-    }
-    
-    
     //MARK: TEXT FIELD + SCROLL VIEW
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        
         if (textField == passwordTextField){
             scrollView.setContentOffset(CGPointMake(0, 80), animated: true)
         } else {
@@ -103,7 +101,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

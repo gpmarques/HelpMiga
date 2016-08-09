@@ -272,7 +272,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBG" translatesAutoresizingMaskIntoConstraints="NO" id="IhQ-ab-6nT">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="isa" translatesAutoresizingMaskIntoConstraints="NO" id="L5s-UF-9m9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="isa" translatesAutoresizingMaskIntoConstraints="NO" id="L5s-UF-9m9">
                                 <rect key="frame" x="240" y="60" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="C5O-Wg-tTa"/>

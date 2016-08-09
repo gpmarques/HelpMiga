@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var profileImageView: UIImageView!
     
@@ -19,14 +19,41 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profilePhoneTextField: UITextField!
 
     @IBAction func editProfilePhoto(sender: AnyObject) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            
+            let profilePicker = UIImagePickerController()
+            profilePicker.delegate = self
+            profilePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+            profilePicker.allowsEditing = false
+            
+            self.presentViewController(profilePicker, animated: true, completion: nil)
+        }
     }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        
+        profileImageView.image = image
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(userText: UITextField) -> Bool {
+        userText.resignFirstResponder()
+        return true;
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profileImageView.layer.cornerRadius = 20
+        self.hideKeyboardWhenTappedAround()
+        
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.width/2
+        profileImageView.clipsToBounds = true
+        
+        profileNameTextfield.delegate = self
+        profileEmailTextField.delegate = self
+        profilePhoneTextField.delegate = self
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
