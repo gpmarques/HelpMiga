@@ -212,14 +212,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="zda-Hd-bP3">
                                 <rect key="frame" x="-46" y="300" width="300" height="180"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROn-cr-6jA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROn-cr-6jA" userLabel="Ask Help">
                                 <rect key="frame" x="150" y="110" width="300" height="168"/>
                                 <state key="normal" backgroundImage="ask_help_bubble_round"/>
                                 <connections>
                                     <action selector="askHelpButton:" destination="kFJ-z5-t7p" eventType="touchUpInside" id="73F-ba-lwr"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DpB-B8-Y6S">
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DpB-B8-Y6S">
                                 <rect key="frame" x="0.0" y="311" width="600" height="240"/>
                                 <color key="backgroundColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="kAB-8e-UGa">
@@ -244,7 +244,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accepted your request:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIQ-14-Q9b">
-                                            <rect key="frame" x="10" y="4.5" width="186" height="21"/>
+                                            <rect key="frame" x="10" y="4" width="186" height="21"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -263,10 +263,18 @@
                                     <outlet property="delegate" destination="kFJ-z5-t7p" id="vji-bl-J1i"/>
                                 </connections>
                             </collectionView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sin-C6-5Dg" userLabel="CloseRequest">
+                                <rect key="frame" x="175" y="239" width="250" height="62"/>
+                                <state key="normal" backgroundImage="complete_request"/>
+                                <connections>
+                                    <action selector="closeRequestButton:" destination="kFJ-z5-t7p" eventType="touchUpInside" id="3nz-rF-TGX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zda-Hd-bP3" firstAttribute="top" secondItem="aO4-fk-o0O" secondAttribute="top" constant="300" id="6kb-76-BAm"/>
+                            <constraint firstItem="Sin-C6-5Dg" firstAttribute="centerX" secondItem="aO4-fk-o0O" secondAttribute="centerX" id="9WL-Gy-TQ3"/>
                             <constraint firstItem="ROn-cr-6jA" firstAttribute="top" secondItem="aO4-fk-o0O" secondAttribute="top" constant="110" id="CLK-aV-8cf"/>
                             <constraint firstItem="ROn-cr-6jA" firstAttribute="height" secondItem="aO4-fk-o0O" secondAttribute="height" multiplier="0.28:1" id="EM5-4q-cJM"/>
                             <constraint firstItem="ROn-cr-6jA" firstAttribute="centerX" secondItem="aO4-fk-o0O" secondAttribute="centerX" id="G3F-gA-tVI"/>
@@ -276,6 +284,7 @@
                             <constraint firstAttribute="trailing" secondItem="DpB-B8-Y6S" secondAttribute="trailing" id="csu-R3-PFr"/>
                             <constraint firstItem="ROn-cr-6jA" firstAttribute="width" secondItem="aO4-fk-o0O" secondAttribute="width" multiplier="0.5:1" id="eUy-ZJ-PM1"/>
                             <constraint firstItem="YSn-6m-bsU" firstAttribute="leading" secondItem="aO4-fk-o0O" secondAttribute="leading" id="fNp-hH-F27"/>
+                            <constraint firstItem="DpB-B8-Y6S" firstAttribute="top" secondItem="Sin-C6-5Dg" secondAttribute="bottom" constant="10" id="kCC-fF-pAl"/>
                             <constraint firstItem="zda-Hd-bP3" firstAttribute="leading" secondItem="aO4-fk-o0O" secondAttribute="leading" constant="-46" id="mHS-ls-sBC"/>
                             <constraint firstItem="DpB-B8-Y6S" firstAttribute="height" secondItem="aO4-fk-o0O" secondAttribute="height" multiplier="0.4:1" id="nlx-B9-R5N"/>
                             <constraint firstItem="2Mc-nS-fhp" firstAttribute="top" secondItem="DpB-B8-Y6S" secondAttribute="bottom" id="r6u-XO-2wG"/>
@@ -293,6 +302,9 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="acceptedRequestCollectionView" destination="DpB-B8-Y6S" id="gCe-Dc-ZqE"/>
+                        <outlet property="askHelpOutlet" destination="ROn-cr-6jA" id="qXl-oB-BRj"/>
+                        <outlet property="closeRequestOutlet" destination="Sin-C6-5Dg" id="ick-6K-Xse"/>
+                        <outlet property="girl" destination="zda-Hd-bP3" id="WWr-Dh-8Sd"/>
                         <outlet property="mapView" destination="YSn-6m-bsU" id="44r-xm-avT"/>
                     </connections>
                 </viewController>
@@ -686,6 +698,7 @@
         <image name="addPictures" width="244" height="44"/>
         <image name="ask_help_bubble_round" width="136" height="137"/>
         <image name="back" width="18" height="30"/>
+        <image name="complete_request" width="250" height="62"/>
         <image name="emailField" width="291" height="42"/>
         <image name="emailFieldSignIn" width="291" height="42"/>
         <image name="email_red" width="18" height="12"/>

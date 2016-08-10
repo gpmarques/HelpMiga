@@ -18,7 +18,20 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
 
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var girl: UIImageView!
+    
+    @IBOutlet weak var closeRequestOutlet: UIButton!
+    
+    @IBOutlet weak var askHelpOutlet: UIButton!
+    
     @IBAction func askHelpButton(sender: AnyObject) {
+        acceptedRequestCollectionView.hidden = false
+        girl.hidden = true
+        closeRequestOutlet.hidden = false
+        askHelpOutlet.imageView?.image = UIImage(named: "request_sent_bubble_round")
+        
+    }
+    @IBAction func closeRequestButton(sender: AnyObject) {
     }
   
     @IBOutlet weak var acceptedRequestCollectionView: UICollectionView!
