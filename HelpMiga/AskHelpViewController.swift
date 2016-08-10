@@ -36,7 +36,7 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
             print("Image Not Found")
             return
         }
-        sender.setBackgroundImage(image, forState: UIControlState.Normal)
+        askHelpOutlet.setBackgroundImage(image, forState: UIControlState.Normal)
     }
   
     @IBOutlet weak var acceptedRequestCollectionView: UICollectionView!
@@ -88,7 +88,7 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
         
         //mudar pras infos das pessoas que aceitaram o pedido
         cell.name.text = "Priscila"
-        cell.image.image = UIImage(named: "isa")
+        cell.image.image = UIImage(named: "girl2")
         cell.distance.text = "3 minutes from you."
         return cell
     }
@@ -123,7 +123,6 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
             button.setBackgroundImage(image, forState: UIControlState.Normal)
         })
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
