@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class AskHelpViewController: UIViewController, MKMapViewDelegate {
+class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var locationManager = CLLocationManager()
     let regionRadius: CLLocationDistance = 1000
@@ -21,6 +21,8 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate {
     @IBAction func askHelpButton(sender: AnyObject) {
     }
   
+    @IBOutlet weak var acceptedRequestCollectionView: UICollectionView!
+    
     func checkLocationAuthorizationStatus() {
         if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
             mapView.showsUserLocation = true
@@ -46,6 +48,40 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate {
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        //mudar pro numero de pessoas que aceitaram o pedido
+        return 3
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell : AcceptedRequestCell = collectionView.dequeueReusableCellWithReuseIdentifier("AcceptedRequestIdentifier", forIndexPath: indexPath) as! AcceptedRequestCell
+        
+        //mudar pras infos das pessoas que aceitaram o pedido
+        cell.name.text = "Priscila"
+        cell.image.image = UIImage(named: "isa")
+        cell.distance.text = "3 minutes from you."
+        return cell
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        let supplementaryView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier:"SectionHeader", forIndexPath: indexPath) as UICollectionReusableView
+        
+        return supplementaryView
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let height = 80
+        return CGSizeMake(collectionView.bounds.size.width - 12, CGFloat(height))
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +89,9 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate {
         //        centerMapOnLocation(initialLocation)
         
         mapView.showsUserLocation = true
+        
+        let nib = UINib(nibName: "AcceptedRequestCell", bundle: nil)
+        self.acceptedRequestCollectionView.registerNib(nib, forCellWithReuseIdentifier: "AcceptedRequestIdentifier")
         
     }
     
@@ -62,3 +101,4 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate {
     }
 
 }
+

@@ -18,6 +18,7 @@
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -218,6 +219,50 @@
                                     <action selector="askHelpButton:" destination="kFJ-z5-t7p" eventType="touchUpInside" id="73F-ba-lwr"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DpB-B8-Y6S">
+                                <rect key="frame" x="0.0" y="311" width="600" height="240"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="kAB-8e-UGa">
+                                    <size key="itemSize" width="295" height="77"/>
+                                    <size key="headerReferenceSize" width="50" height="30"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wsy-wl-0Zo" customClass="AcceptedRequestCell" customModule="HelpMiga" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="30" width="295" height="77"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="295" height="77"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionHeader" id="aNP-tE-Ql0" customClass="HeaderView" customModule="HelpMiga" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accepted your request:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIQ-14-Q9b">
+                                            <rect key="frame" x="10" y="4.5" width="186" height="21"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="PIQ-14-Q9b" firstAttribute="centerY" secondItem="aNP-tE-Ql0" secondAttribute="centerY" id="IND-pE-AWc"/>
+                                        <constraint firstItem="PIQ-14-Q9b" firstAttribute="leading" secondItem="aNP-tE-Ql0" secondAttribute="leading" constant="10" id="YiM-La-rda"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="headerLabel" destination="PIQ-14-Q9b" id="DgJ-xe-xXM"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="kFJ-z5-t7p" id="Goz-Mx-3uo"/>
+                                    <outlet property="delegate" destination="kFJ-z5-t7p" id="vji-bl-J1i"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -228,10 +273,14 @@
                             <constraint firstAttribute="trailing" secondItem="YSn-6m-bsU" secondAttribute="trailing" id="Jvs-vy-DPi"/>
                             <constraint firstItem="zda-Hd-bP3" firstAttribute="width" secondItem="aO4-fk-o0O" secondAttribute="width" multiplier="0.5:1" id="WoB-jz-pks"/>
                             <constraint firstItem="YSn-6m-bsU" firstAttribute="top" secondItem="aO4-fk-o0O" secondAttribute="top" id="cjH-i5-CRZ"/>
+                            <constraint firstAttribute="trailing" secondItem="DpB-B8-Y6S" secondAttribute="trailing" id="csu-R3-PFr"/>
                             <constraint firstItem="ROn-cr-6jA" firstAttribute="width" secondItem="aO4-fk-o0O" secondAttribute="width" multiplier="0.5:1" id="eUy-ZJ-PM1"/>
                             <constraint firstItem="YSn-6m-bsU" firstAttribute="leading" secondItem="aO4-fk-o0O" secondAttribute="leading" id="fNp-hH-F27"/>
                             <constraint firstItem="zda-Hd-bP3" firstAttribute="leading" secondItem="aO4-fk-o0O" secondAttribute="leading" constant="-46" id="mHS-ls-sBC"/>
+                            <constraint firstItem="DpB-B8-Y6S" firstAttribute="height" secondItem="aO4-fk-o0O" secondAttribute="height" multiplier="0.4:1" id="nlx-B9-R5N"/>
+                            <constraint firstItem="2Mc-nS-fhp" firstAttribute="top" secondItem="DpB-B8-Y6S" secondAttribute="bottom" id="r6u-XO-2wG"/>
                             <constraint firstItem="zda-Hd-bP3" firstAttribute="height" secondItem="aO4-fk-o0O" secondAttribute="height" multiplier="0.3:1" id="ro2-SE-9HO"/>
+                            <constraint firstItem="DpB-B8-Y6S" firstAttribute="leading" secondItem="aO4-fk-o0O" secondAttribute="leading" id="tSh-xV-9qo"/>
                             <constraint firstAttribute="bottom" secondItem="YSn-6m-bsU" secondAttribute="bottom" id="wLm-i4-o9t"/>
                         </constraints>
                     </view>
@@ -243,6 +292,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <connections>
+                        <outlet property="acceptedRequestCollectionView" destination="DpB-B8-Y6S" id="gCe-Dc-ZqE"/>
                         <outlet property="mapView" destination="YSn-6m-bsU" id="44r-xm-avT"/>
                     </connections>
                 </viewController>
@@ -349,19 +399,19 @@
                                     <constraint firstAttribute="width" constant="16" id="bjb-fX-ul5"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Gr-KV-xeT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Gr-KV-xeT">
                                 <rect key="frame" x="56" y="281" width="524" height="22"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Phone Number" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyf-Z4-ppv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Phone Number" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyf-Z4-ppv">
                                 <rect key="frame" x="54" y="332" width="526" height="22"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CkG-xs-RAc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CkG-xs-RAc">
                                 <rect key="frame" x="59" y="227" width="521" height="22"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
