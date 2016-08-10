@@ -10,9 +10,9 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate {
     
-    var locationManager = CLLocationManager()
+    var locationManager: CLLocationManager?
     let regionRadius: CLLocationDistance = 1000
     let initialLocation = CLLocation()
 
@@ -25,40 +25,53 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     @IBOutlet weak var askHelpOutlet: UIButton!
     
     @IBAction func askHelpButton(sender: AnyObject) {
-        acceptedRequestCollectionView.hidden = false
-        girl.hidden = true
-        closeRequestOutlet.hidden = false
-        askHelpOutlet.imageView?.image = UIImage(named: "request_sent_bubble_round")
-        
+        interfaceChangesWhenAskHelpClicked(sender)
+
     }
+    
     @IBAction func closeRequestButton(sender: AnyObject) {
+        acceptedRequestCollectionView.hidden = true
+        closeRequestOutlet.hidden = true
+        guard let image = UIImage(named: "ask_help_bubble_round") else {
+            print("Image Not Found")
+            return
+        }
+        sender.setBackgroundImage(image, forState: UIControlState.Normal)
     }
   
     @IBOutlet weak var acceptedRequestCollectionView: UICollectionView!
+
     
-    func checkLocationAuthorizationStatus() {
-        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
-            mapView.showsUserLocation = true
-        } else {
-            locationManager.requestAlwaysAuthorization()
-            locationManager.requestWhenInUseAuthorization()
+    //MARK: - Location Manager
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        
+        switch status {
+        case .NotDetermined:
+            print("NotDetermined")
+        case .Restricted:
+            print("Restricted")
+        case .Denied:
+            print("Denied")
+        case .AuthorizedAlways:
+            print("AuthorizedAlways")
+        case .AuthorizedWhenInUse:
+            print("AuthorizedWhenInUse")
+            locationManager!.startUpdatingLocation()
         }
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations.last
         
-        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        
-        self.mapView.setRegion(region, animated: true)
-    }
-
-    
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-                                                                  regionRadius * 2.0, regionRadius * 2.0)
+        let location = locations.first!
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 500, 500)
         mapView.setRegion(coordinateRegion, animated: true)
+        locationManager?.stopUpdatingLocation()
+        locationManager = nil
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Failed to initialize GPS: ", error.description)
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,6 +79,8 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
         //mudar pro numero de pessoas que aceitaram o pedido
         return 3
     }
+    
+    //MARK: - Collection View
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
@@ -93,13 +108,35 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
         let height = 80
         return CGSizeMake(collectionView.bounds.size.width - 12, CGFloat(height))
     }
+    
+    //MARK: - Interface changes
+    
+    func interfaceChangesWhenAskHelpClicked(button: AnyObject) {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.acceptedRequestCollectionView.hidden = false
+            self.girl.hidden = true
+            self.closeRequestOutlet.hidden = false
+            guard let image = UIImage(named: "request_sent_bubble_round") else {
+                print("Image Not Found")
+                return
+            }
+            button.setBackgroundImage(image, forState: UIControlState.Normal)
+        })
+    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        checkLocationAuthorizationStatus()
-        //        centerMapOnLocation(initialLocation)
+        locationManager = CLLocationManager()
+        locationManager!.delegate = self
+        
+        if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+            locationManager!.startUpdatingLocation()
+        } else {
+//            locationManager!.requestWhenInUseAuthorization()
+            locationManager!.requestAlwaysAuthorization()
+        }
         
         mapView.showsUserLocation = true
         
