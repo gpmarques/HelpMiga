@@ -7,13 +7,29 @@
 //
 
 import UIKit
+import MapKit
 
-class RequestsViewController: UIViewController {
+class RequestsViewController: UIViewController, MKMapViewDelegate {
+    
+    @IBOutlet weak var requestsBG: UIImageView!
+    @IBOutlet weak var requestedHelpImageView: UIImageView!
+    @IBOutlet weak var requestedHelpName: UILabel!
+    @IBOutlet weak var requestedHelpDistance: UILabel!
+    @IBOutlet weak var requestedHelpMapView: MKMapView!
+    
+    @IBAction func callRequestedHelpButton(sender: AnyObject) {
+    }
+    
+    @IBAction func goingButton(sender: AnyObject) {
+    }
 
+    @IBAction func rejectRequestButton(sender: AnyObject) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        requestsBG.layer.cornerRadius = 50
+        requestsBG.clipsToBounds = true
     }
 
     override func didReceiveMemoryWarning() {

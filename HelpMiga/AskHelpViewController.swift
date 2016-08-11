@@ -13,8 +13,6 @@ import CoreLocation
 class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager?
-    let regionRadius: CLLocationDistance = 1000
-    let initialLocation = CLLocation()
 
     @IBOutlet weak var buttonCenterX: NSLayoutConstraint!
     @IBOutlet weak var buttonY: NSLayoutConstraint!
