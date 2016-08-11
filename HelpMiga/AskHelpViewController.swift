@@ -13,10 +13,14 @@ import CoreLocation
 class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager?
+    var askedHelp = false
 
+    //CONSTRAINTS
     @IBOutlet weak var buttonCenterX: NSLayoutConstraint!
     @IBOutlet weak var buttonY: NSLayoutConstraint!
-    
+    @IBOutlet weak var buttonHeight: NSLayoutConstraint!
+    @IBOutlet weak var buttonWidth: NSLayoutConstraint!
+
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var girl: UIImageView!
     @IBOutlet weak var closeRequestOutlet: UIButton!
@@ -28,13 +32,8 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     }
     
     @IBAction func closeRequestButton(sender: AnyObject) {
-        acceptedRequestCollectionView.hidden = true
-        closeRequestOutlet.hidden = true
-        guard let image = UIImage(named: "ask_help_bubble_round") else {
-            print("Image Not Found")
-            return
-        }
-        askHelpOutlet.setBackgroundImage(image, forState: UIControlState.Normal)
+        interfaceChangesWhenCloseRequestClicked(sender)
+
     }
   
     @IBOutlet weak var acceptedRequestCollectionView: UICollectionView!
@@ -112,25 +111,72 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     func interfaceChangesWhenAskHelpClicked(button: AnyObject) {
         dispatch_async(dispatch_get_main_queue(), {
             
-//            self.buttonCenterX.constant = 200.0
-//            self.buttonY.constant = 400
-//            self.view.layoutIfNeeded()
-            
-//            UIView.animateWithDuration(Double(0.5), animations: {
-//                self.buttonCenterX.constant = -100
-//                self.buttonY.constant = -20
-//                self.view.layoutIfNeeded()
-//            })
-            
-            self.acceptedRequestCollectionView.hidden = false
-            self.girl.hidden = true
-            self.closeRequestOutlet.hidden = false
-            guard let image = UIImage(named: "request_sent_bubble_round") else {
-                print("Image Not Found")
-                return
+            if self.askedHelp == false {
+                
+                //            self.buttonCenterX.constant = 200.0
+                //            self.buttonY.constant = 400
+                //            self.view.layoutIfNeeded()
+                
+                UIView.animateWithDuration(Double(0.5), animations: {
+                    self.buttonCenterX.constant = -110
+                    self.buttonY.constant = 20
+                    self.buttonWidth.constant = -60
+                    self.buttonHeight.constant = -60
+                    self.view.layoutIfNeeded()
+                })
+                
+                self.acceptedRequestCollectionView.hidden = false
+                self.girl.hidden = true
+                self.closeRequestOutlet.hidden = false
+                guard let image = UIImage(named: "request_sent_bubble_round") else {
+                    print("Image Not Found")
+                    return
+                }
+                button.setBackgroundImage(image, forState: UIControlState.Normal)
+                self.askedHelp = true
+            } else {
+                
+                UIView.animateWithDuration(Double(0.5), animations: {
+                    self.buttonCenterX.constant += 110
+                    self.buttonY.constant = 100
+                    self.buttonWidth.constant += 60
+                    self.buttonHeight.constant += 60
+                    self.view.layoutIfNeeded()
+                })
+                guard let image = UIImage(named: "ask_help_bubble_round") else {
+                    print("Image Not Found")
+                    return
+                }
+                button.setBackgroundImage(image, forState: UIControlState.Normal)
+                self.askedHelp = false
+                
+                self.girl.hidden = false
+                self.acceptedRequestCollectionView.hidden = true
+                self.closeRequestOutlet.hidden = true
             }
-            button.setBackgroundImage(image, forState: UIControlState.Normal)
         })
+    }
+    
+    func interfaceChangesWhenCloseRequestClicked(button: AnyObject) {
+        
+        UIView.animateWithDuration(Double(0.5), animations: {
+            self.buttonCenterX.constant += 110
+            self.buttonY.constant = 100
+            self.buttonWidth.constant += 60
+            self.buttonHeight.constant += 60
+            self.view.layoutIfNeeded()
+        })
+        guard let image = UIImage(named: "ask_help_bubble_round") else {
+            print("Image Not Found")
+            return
+        }
+        askHelpOutlet.setBackgroundImage(image, forState: UIControlState.Normal)
+        
+        girl.hidden = false
+        acceptedRequestCollectionView.hidden = true
+        closeRequestOutlet.hidden = true
+        
+        self.askedHelp = false
     }
     
     override func viewDidLoad() {

@@ -482,6 +482,8 @@
                         <outlet property="acceptedRequestCollectionView" destination="DpB-B8-Y6S" id="gCe-Dc-ZqE"/>
                         <outlet property="askHelpOutlet" destination="ROn-cr-6jA" id="qXl-oB-BRj"/>
                         <outlet property="buttonCenterX" destination="G3F-gA-tVI" id="ngS-U3-kfL"/>
+                        <outlet property="buttonHeight" destination="y5J-Xt-6al" id="uxJ-gu-cMt"/>
+                        <outlet property="buttonWidth" destination="zSR-xH-WWj" id="KI5-hA-JJY"/>
                         <outlet property="buttonY" destination="CLK-aV-8cf" id="Eh6-Je-VL1"/>
                         <outlet property="closeRequestOutlet" destination="Sin-C6-5Dg" id="ick-6K-Xse"/>
                         <outlet property="girl" destination="zda-Hd-bP3" id="WWr-Dh-8Sd"/>
