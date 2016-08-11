@@ -107,8 +107,8 @@
 				D1FD282A1D59302B0067C134 /* LoginViewController.swift */,
 				6E55132C1D5A5338006860EB /* RequestsViewController.swift */,
 				6E55132E1D5A5345006860EB /* PicturesViewController.swift */,
-				6E5513301D5A5350006860EB /* ProfileViewController.swift */,
 				6E55133B1D5BE765006860EB /* PicturesCell.swift */,
+				6E5513301D5A5350006860EB /* ProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

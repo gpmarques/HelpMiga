@@ -17,11 +17,8 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     let initialLocation = CLLocation()
 
     @IBOutlet weak var mapView: MKMapView!
-    
     @IBOutlet weak var girl: UIImageView!
-    
     @IBOutlet weak var closeRequestOutlet: UIButton!
-    
     @IBOutlet weak var askHelpOutlet: UIButton!
     
     @IBAction func askHelpButton(sender: AnyObject) {
@@ -132,12 +129,13 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
         
         if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
             locationManager!.startUpdatingLocation()
+            mapView.showsUserLocation = true
         } else {
 //            locationManager!.requestWhenInUseAuthorization()
             locationManager!.requestAlwaysAuthorization()
         }
         
-        mapView.showsUserLocation = true
+        
         
         let nib = UINib(nibName: "AcceptedRequestCell", bundle: nil)
         self.acceptedRequestCollectionView.registerNib(nib, forCellWithReuseIdentifier: "AcceptedRequestIdentifier")

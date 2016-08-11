@@ -374,10 +374,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wan-CI-d8a">
-                                <rect key="frame" x="523" y="483" width="67" height="67"/>
+                                <rect key="frame" x="503" y="463" width="87" height="87"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="67" id="J30-Am-mOl"/>
-                                    <constraint firstAttribute="height" constant="67" id="ccv-Sz-sQ1"/>
+                                    <constraint firstAttribute="width" constant="87" id="J30-Am-mOl"/>
+                                    <constraint firstAttribute="height" constant="87" id="ccv-Sz-sQ1"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="camera_button"/>
                                 <connections>
