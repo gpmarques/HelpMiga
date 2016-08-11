@@ -111,6 +111,8 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     func interfaceChangesWhenAskHelpClicked(button: AnyObject) {
         dispatch_async(dispatch_get_main_queue(), {
             
+            //falta diminuir a altura do mapview
+            
             if self.askedHelp == false {
                 
                 //            self.buttonCenterX.constant = 200.0
@@ -158,25 +160,27 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     }
     
     func interfaceChangesWhenCloseRequestClicked(button: AnyObject) {
-        
-        UIView.animateWithDuration(Double(0.5), animations: {
-            self.buttonCenterX.constant += 110
-            self.buttonY.constant = 100
-            self.buttonWidth.constant += 60
-            self.buttonHeight.constant += 60
-            self.view.layoutIfNeeded()
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            UIView.animateWithDuration(Double(0.5), animations: {
+                self.buttonCenterX.constant += 110
+                self.buttonY.constant = 100
+                self.buttonWidth.constant += 60
+                self.buttonHeight.constant += 60
+                self.view.layoutIfNeeded()
+            })
+            guard let image = UIImage(named: "ask_help_bubble_round") else {
+                print("Image Not Found")
+                return
+            }
+            self.askHelpOutlet.setBackgroundImage(image, forState: UIControlState.Normal)
+            
+            self.girl.hidden = false
+            self.acceptedRequestCollectionView.hidden = true
+            self.closeRequestOutlet.hidden = true
+            
+            self.askedHelp = false
         })
-        guard let image = UIImage(named: "ask_help_bubble_round") else {
-            print("Image Not Found")
-            return
-        }
-        askHelpOutlet.setBackgroundImage(image, forState: UIControlState.Normal)
-        
-        girl.hidden = false
-        acceptedRequestCollectionView.hidden = true
-        closeRequestOutlet.hidden = true
-        
-        self.askedHelp = false
     }
     
     override func viewDidLoad() {
