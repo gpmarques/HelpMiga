@@ -16,6 +16,9 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     let regionRadius: CLLocationDistance = 1000
     let initialLocation = CLLocation()
 
+    @IBOutlet weak var buttonCenterX: NSLayoutConstraint!
+    @IBOutlet weak var buttonY: NSLayoutConstraint!
+    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var girl: UIImageView!
     @IBOutlet weak var closeRequestOutlet: UIButton!
@@ -110,6 +113,17 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     
     func interfaceChangesWhenAskHelpClicked(button: AnyObject) {
         dispatch_async(dispatch_get_main_queue(), {
+            
+//            self.buttonCenterX.constant = 200.0
+//            self.buttonY.constant = 400
+//            self.view.layoutIfNeeded()
+            
+//            UIView.animateWithDuration(Double(0.5), animations: {
+//                self.buttonCenterX.constant = -100
+//                self.buttonY.constant = -20
+//                self.view.layoutIfNeeded()
+//            })
+            
             self.acceptedRequestCollectionView.hidden = false
             self.girl.hidden = true
             self.closeRequestOutlet.hidden = false
