@@ -49,6 +49,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width/2
         profileImageView.clipsToBounds = true
+        profileImageView.layer.borderWidth = 3
+        profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
         
         profileNameTextfield.delegate = self
         profileEmailTextField.delegate = self

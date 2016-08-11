@@ -84,7 +84,7 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
         let cell : AcceptedRequestCell = collectionView.dequeueReusableCellWithReuseIdentifier("AcceptedRequestIdentifier", forIndexPath: indexPath) as! AcceptedRequestCell
         
         //mudar pras infos das pessoas que aceitaram o pedido
-        cell.name.text = "Priscila"
+        cell.name.text = "Fulana"
         cell.image.image = UIImage(named: "girl2")
         cell.distance.text = "3 minutes from you."
         return cell
