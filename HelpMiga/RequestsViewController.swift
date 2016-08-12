@@ -42,9 +42,9 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         //comentar as 3 linhas abaixo pra aparecer a view do request
-//        requestView.hidden = true
-//        noRequestsLabel.hidden = false
-//        logo.hidden = false
+        requestView.hidden = true
+        noRequestsLabel.hidden = false
+        logo.hidden = false
 
         requestedHelpImageView.layer.cornerRadius = requestedHelpImageView.frame.size.width/2
         requestedHelpImageView.clipsToBounds = true
