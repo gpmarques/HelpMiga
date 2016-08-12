@@ -10,11 +10,14 @@
     <customFonts key="customFonts">
         <mutableArray key="Roboto-Black.ttf">
             <string>Roboto-Black</string>
+            <string>Roboto-Black</string>
         </mutableArray>
         <mutableArray key="Roboto-Italic.ttf">
             <string>Roboto-Italic</string>
+            <string>Roboto-Italic</string>
         </mutableArray>
         <mutableArray key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
@@ -424,7 +427,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROn-cr-6jA" userLabel="Ask Help">
-                                <rect key="frame" x="172.5" y="100" width="255" height="144.5"/>
+                                <rect key="frame" x="172" y="100" width="255" height="144.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ROn-cr-6jA" secondAttribute="height" multiplier="136:137" id="oVN-JT-m5R"/>
                                 </constraints>
@@ -438,21 +441,38 @@
                                     <action selector="askHelpButton:" destination="kFJ-z5-t7p" eventType="touchUpInside" id="73F-ba-lwr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BB-Es-Vey" userLabel="Label">
+                                <rect key="frame" x="259" y="61" width="81" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Black" family="Roboto" pointSize="20"/>
+                                <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finding girls next to you..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKo-13-j7H">
+                                <rect key="frame" x="429" y="164.5" width="162" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="14"/>
+                                <color key="textColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zda-Hd-bP3" firstAttribute="top" secondItem="aO4-fk-o0O" secondAttribute="top" constant="300" id="6kb-76-BAm"/>
                             <constraint firstItem="Sin-C6-5Dg" firstAttribute="centerX" secondItem="aO4-fk-o0O" secondAttribute="centerX" id="9WL-Gy-TQ3"/>
                             <constraint firstItem="ROn-cr-6jA" firstAttribute="top" secondItem="aO4-fk-o0O" secondAttribute="top" constant="100" id="CLK-aV-8cf"/>
+                            <constraint firstItem="LKo-13-j7H" firstAttribute="leading" secondItem="ROn-cr-6jA" secondAttribute="trailing" constant="2" id="DSt-8L-jQV"/>
+                            <constraint firstItem="ROn-cr-6jA" firstAttribute="top" secondItem="8BB-Es-Vey" secondAttribute="bottom" constant="15" id="DW2-tK-5In"/>
                             <constraint firstItem="ROn-cr-6jA" firstAttribute="height" secondItem="aO4-fk-o0O" secondAttribute="height" multiplier="0.28:1" id="EM5-4q-cJM"/>
                             <constraint firstItem="ROn-cr-6jA" firstAttribute="width" secondItem="aO4-fk-o0O" secondAttribute="width" multiplier="0.45:1" id="F5O-kN-b1g"/>
+                            <constraint firstItem="LKo-13-j7H" firstAttribute="centerY" secondItem="ROn-cr-6jA" secondAttribute="centerY" id="Fjr-MQ-gxN"/>
                             <constraint firstItem="ROn-cr-6jA" firstAttribute="centerX" secondItem="aO4-fk-o0O" secondAttribute="centerX" id="G3F-gA-tVI"/>
                             <constraint firstAttribute="trailing" secondItem="YSn-6m-bsU" secondAttribute="trailing" id="Jvs-vy-DPi"/>
                             <constraint firstItem="zda-Hd-bP3" firstAttribute="width" secondItem="aO4-fk-o0O" secondAttribute="width" multiplier="0.5:1" id="WoB-jz-pks"/>
+                            <constraint firstItem="8BB-Es-Vey" firstAttribute="centerX" secondItem="aO4-fk-o0O" secondAttribute="centerX" id="X0d-1t-TS2"/>
                             <constraint firstItem="YSn-6m-bsU" firstAttribute="top" secondItem="aO4-fk-o0O" secondAttribute="top" id="cjH-i5-CRZ"/>
                             <constraint firstAttribute="trailing" secondItem="DpB-B8-Y6S" secondAttribute="trailing" id="csu-R3-PFr"/>
                             <constraint firstItem="ROn-cr-6jA" firstAttribute="width" secondItem="aO4-fk-o0O" secondAttribute="width" multiplier="0.5:1" id="eUy-ZJ-PM1"/>
                             <constraint firstItem="YSn-6m-bsU" firstAttribute="leading" secondItem="aO4-fk-o0O" secondAttribute="leading" id="fNp-hH-F27"/>
+                            <constraint firstItem="8BB-Es-Vey" firstAttribute="top" secondItem="wdT-75-Eht" secondAttribute="bottom" constant="41.5" id="iUV-37-e1Y"/>
                             <constraint firstItem="DpB-B8-Y6S" firstAttribute="top" secondItem="Sin-C6-5Dg" secondAttribute="bottom" constant="10" id="kCC-fF-pAl"/>
                             <constraint firstItem="zda-Hd-bP3" firstAttribute="leading" secondItem="aO4-fk-o0O" secondAttribute="leading" constant="-46" id="mHS-ls-sBC"/>
                             <constraint firstItem="DpB-B8-Y6S" firstAttribute="height" secondItem="aO4-fk-o0O" secondAttribute="height" multiplier="0.4:1" id="nlx-B9-R5N"/>
@@ -465,6 +485,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="DW2-tK-5In"/>
                                 <exclude reference="EM5-4q-cJM"/>
                                 <exclude reference="F5O-kN-b1g"/>
                                 <exclude reference="eUy-ZJ-PM1"/>
@@ -480,14 +501,17 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="acceptedRequestCollectionView" destination="DpB-B8-Y6S" id="gCe-Dc-ZqE"/>
+                        <outlet property="askHelpLabel" destination="8BB-Es-Vey" id="zis-lC-CNR"/>
                         <outlet property="askHelpOutlet" destination="ROn-cr-6jA" id="qXl-oB-BRj"/>
                         <outlet property="buttonCenterX" destination="G3F-gA-tVI" id="ngS-U3-kfL"/>
                         <outlet property="buttonHeight" destination="y5J-Xt-6al" id="uxJ-gu-cMt"/>
                         <outlet property="buttonWidth" destination="zSR-xH-WWj" id="KI5-hA-JJY"/>
                         <outlet property="buttonY" destination="CLK-aV-8cf" id="Eh6-Je-VL1"/>
                         <outlet property="closeRequestOutlet" destination="Sin-C6-5Dg" id="ick-6K-Xse"/>
+                        <outlet property="findingGirlsLabel" destination="LKo-13-j7H" id="9an-HD-Iry"/>
                         <outlet property="girl" destination="zda-Hd-bP3" id="WWr-Dh-8Sd"/>
                         <outlet property="mapView" destination="YSn-6m-bsU" id="44r-xm-avT"/>
+                        <outlet property="mapViewBottom" destination="wLm-i4-o9t" id="OcE-8V-ht7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJJ-wT-1a4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -696,6 +720,16 @@
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNp-J3-5Nd">
+                                <rect key="frame" x="527" y="28" width="53" height="30"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButton:" destination="2xp-FZ-vd7" eventType="touchUpInside" id="LwZ-ND-YGh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -708,6 +742,7 @@
                             <constraint firstItem="L5s-UF-9m9" firstAttribute="top" secondItem="Y1o-R0-cvt" secondAttribute="top" constant="60" id="9lx-6W-xtz"/>
                             <constraint firstItem="L5s-UF-9m9" firstAttribute="centerX" secondItem="Y1o-R0-cvt" secondAttribute="centerX" id="BTi-lf-nGU"/>
                             <constraint firstItem="I0h-3o-hhN" firstAttribute="leading" secondItem="Y1o-R0-cvt" secondAttribute="leading" constant="40" id="BZn-y4-PC4"/>
+                            <constraint firstItem="hNp-J3-5Nd" firstAttribute="top" secondItem="1PN-XR-1gS" secondAttribute="bottom" constant="8" id="DOj-si-Rta"/>
                             <constraint firstItem="eyf-Z4-ppv" firstAttribute="leading" secondItem="G34-e0-t4s" secondAttribute="trailing" constant="20" id="E2m-Fg-olc"/>
                             <constraint firstItem="IhQ-ab-6nT" firstAttribute="centerX" secondItem="Y1o-R0-cvt" secondAttribute="centerX" id="MAe-Ca-d3v"/>
                             <constraint firstItem="uzH-Rc-33w" firstAttribute="top" secondItem="L5s-UF-9m9" secondAttribute="bottom" constant="3" id="N1c-my-EO0"/>
@@ -719,6 +754,7 @@
                             <constraint firstAttribute="trailing" secondItem="CkG-xs-RAc" secondAttribute="trailing" constant="20" id="fAT-uu-Gp4"/>
                             <constraint firstItem="IhQ-ab-6nT" firstAttribute="width" secondItem="Y1o-R0-cvt" secondAttribute="width" id="fMq-ZY-EpX"/>
                             <constraint firstItem="I0h-3o-hhN" firstAttribute="top" secondItem="G34-e0-t4s" secondAttribute="bottom" constant="11" id="hhT-cV-wH0"/>
+                            <constraint firstItem="hNp-J3-5Nd" firstAttribute="trailing" secondItem="Y1o-R0-cvt" secondAttribute="trailingMargin" id="i34-dL-zyf"/>
                             <constraint firstAttribute="trailing" secondItem="2Cr-Es-MGT" secondAttribute="trailing" constant="50" id="kUy-h2-4F6"/>
                             <constraint firstItem="CkG-xs-RAc" firstAttribute="leading" secondItem="Pqf-VH-J66" secondAttribute="trailing" constant="20" id="mNW-Ye-Peq"/>
                             <constraint firstItem="uzH-Rc-33w" firstAttribute="centerX" secondItem="Y1o-R0-cvt" secondAttribute="centerX" id="mTu-FA-zPB"/>

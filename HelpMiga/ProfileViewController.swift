@@ -18,6 +18,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     @IBOutlet weak var profilePhoneTextField: UITextField!
 
+    @IBAction func logOutButton(sender: AnyObject) {
+    }
+    
     @IBAction func editProfilePhoto(sender: AnyObject) {
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {

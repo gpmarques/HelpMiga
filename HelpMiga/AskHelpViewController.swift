@@ -20,7 +20,10 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     @IBOutlet weak var buttonY: NSLayoutConstraint!
     @IBOutlet weak var buttonHeight: NSLayoutConstraint!
     @IBOutlet weak var buttonWidth: NSLayoutConstraint!
-
+    @IBOutlet weak var mapViewBottom: NSLayoutConstraint!
+    
+    @IBOutlet weak var findingGirlsLabel: UILabel!
+    @IBOutlet weak var askHelpLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var girl: UIImageView!
     @IBOutlet weak var closeRequestOutlet: UIButton!
@@ -120,6 +123,8 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
                 //            self.view.layoutIfNeeded()
                 
                 UIView.animateWithDuration(Double(0.5), animations: {
+                    self.findingGirlsLabel.alpha = 1
+                    self.askHelpLabel.alpha = 0
                     self.buttonCenterX.constant = -110
                     self.buttonY.constant = 20
                     self.buttonWidth.constant = -60
@@ -139,6 +144,8 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
             } else {
                 
                 UIView.animateWithDuration(Double(0.5), animations: {
+                    self.findingGirlsLabel.alpha = 0
+                    self.askHelpLabel.alpha = 1
                     self.buttonCenterX.constant += 110
                     self.buttonY.constant = 100
                     self.buttonWidth.constant += 60
@@ -163,6 +170,8 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
         dispatch_async(dispatch_get_main_queue(), {
             
             UIView.animateWithDuration(Double(0.5), animations: {
+                self.findingGirlsLabel.alpha = 0
+                self.askHelpLabel.alpha = 1
                 self.buttonCenterX.constant += 110
                 self.buttonY.constant = 100
                 self.buttonWidth.constant += 60

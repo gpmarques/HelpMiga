@@ -55,12 +55,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let repeatPassword = repeatPasswordTextField.text
         
         if userName?.isEmpty == true || userEmail?.isEmpty == true || userPassword?.isEmpty == true || repeatPassword?.isEmpty == true {
-            alert ("Todos os campos devem ser preenchidos!", title: "Ops!")
+            alert ("All fields must be filled out!", title: "Ops!")
             return
         }
         
         if userPassword != repeatPassword {
-            alert ("As senhas não combinam", title: "Ops!")
+            alert ("Passwords don't match", title: "Ops!")
             return
         }
     }

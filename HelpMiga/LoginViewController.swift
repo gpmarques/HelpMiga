@@ -30,7 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButton(sender: AnyObject) {
         if emailTextField.text!.isEmpty == true || passwordTextField.text!.isEmpty == true {
-            notifyUser("Ops!", message: "Todos os campos devem ser preenchidos")
+            notifyUser("Ops!", message: "All fields must be filled out!")
         }
     }
   
