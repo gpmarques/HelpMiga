@@ -27,7 +27,6 @@
 		D1FD282E1D59302B0067C134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FD282C1D59302B0067C134 /* Main.storyboard */; };
 		D1FD28301D59302B0067C134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1FD282F1D59302B0067C134 /* Assets.xcassets */; };
 		D1FD28331D59302B0067C134 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FD28311D59302B0067C134 /* LaunchScreen.storyboard */; };
-		D1FD28431D5934170067C134 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D1FD28421D5934170067C134 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +52,6 @@
 		D1FD282F1D59302B0067C134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1FD28321D59302B0067C134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1FD28341D59302B0067C134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D1FD28421D5934170067C134 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +137,6 @@
 				6E5513421D5C001A006860EB /* SavePhotos.swift */,
 				6EBE974A1D5A366800DFC9B1 /* Controller */,
 				6EBE97491D5A365400DFC9B1 /* View */,
-				D1FD28411D5933F60067C134 /* Git */,
 				D1FD28281D59302B0067C134 /* AppDelegate.swift */,
 				D1FD282F1D59302B0067C134 /* Assets.xcassets */,
 				6EBE97461D5A310E00DFC9B1 /* Font */,
@@ -148,21 +145,9 @@
 			path = HelpMiga;
 			sourceTree = "<group>";
 		};
-		D1FD28411D5933F60067C134 /* Git */ = {
-			isa = PBXGroup;
-			children = (
-				D1FD28421D5934170067C134 /* .gitignore */,
-			);
-			name = Git;
-			sourceTree = "<group>";
-		};
 		D1FD28441D59343A0067C134 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D1FD28281D59302B0067C134 /* AppDelegate.swift */,
-				D1FD282F1D59302B0067C134 /* Assets.xcassets */,
-				D1FD28341D59302B0067C134 /* Info.plist */,
-				D1FD28411D5933F60067C134 /* Git */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -170,7 +155,6 @@
 		D1FD28451D5934430067C134 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D1FD282A1D59302B0067C134 /* ViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -178,8 +162,6 @@
 		D1FD28461D5934490067C134 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D1FD282C1D59302B0067C134 /* Main.storyboard */,
-				D1FD28311D59302B0067C134 /* LaunchScreen.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -249,7 +231,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1FD28431D5934170067C134 /* .gitignore in Resources */,
 				6E5513401D5BF8E1006860EB /* Roboto-Italic.ttf in Resources */,
 				6E5513411D5BF8E3006860EB /* Roboto-Regular.ttf in Resources */,
 				D1FD28331D59302B0067C134 /* LaunchScreen.storyboard in Resources */,
