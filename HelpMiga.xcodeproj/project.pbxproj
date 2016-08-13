@@ -11,7 +11,6 @@
 		6E55132D1D5A5338006860EB /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E55132C1D5A5338006860EB /* RequestsViewController.swift */; };
 		6E55132F1D5A5345006860EB /* PicturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E55132E1D5A5345006860EB /* PicturesViewController.swift */; };
 		6E5513311D5A5350006860EB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5513301D5A5350006860EB /* ProfileViewController.swift */; };
-		6E5513351D5BA1FD006860EB /* AcceptedRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E5513331D5BA1FD006860EB /* AcceptedRequestCell.xib */; };
 		6E5513391D5BB0D4006860EB /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5513381D5BB0D4006860EB /* HeaderView.swift */; };
 		6E55133C1D5BE765006860EB /* PicturesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E55133B1D5BE765006860EB /* PicturesCell.swift */; };
 		6E55133D1D5BF8DA006860EB /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBE97411D5A310900DFC9B1 /* Roboto-Black.ttf */; };
@@ -21,7 +20,8 @@
 		6E5513411D5BF8E3006860EB /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EBE97451D5A310900DFC9B1 /* Roboto-Regular.ttf */; };
 		6E5513431D5C001A006860EB /* SavePhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5513421D5C001A006860EB /* SavePhotos.swift */; };
 		6EBE97481D5A363F00DFC9B1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBE97471D5A363F00DFC9B1 /* SignInViewController.swift */; };
-		6EFE6F9B1D5FCFE000D3303B /* AcceptedRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE6F9A1D5FCFE000D3303B /* AcceptedRequestCell.swift */; };
+		6EE225F71D5FDBE80003F8E0 /* AcceptedRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE225F31D5FDAF70003F8E0 /* AcceptedRequestCell.xib */; };
+		6EFE6FA51D5FD86800D3303B /* AcceptedRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE6FA41D5FD86800D3303B /* AcceptedRequestCell.swift */; };
 		D1FD28291D59302B0067C134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD28281D59302B0067C134 /* AppDelegate.swift */; };
 		D1FD282B1D59302B0067C134 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD282A1D59302B0067C134 /* LoginViewController.swift */; };
 		D1FD282E1D59302B0067C134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FD282C1D59302B0067C134 /* Main.storyboard */; };
@@ -34,7 +34,6 @@
 		6E55132C1D5A5338006860EB /* RequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		6E55132E1D5A5345006860EB /* PicturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicturesViewController.swift; sourceTree = "<group>"; };
 		6E5513301D5A5350006860EB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		6E5513331D5BA1FD006860EB /* AcceptedRequestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AcceptedRequestCell.xib; path = "../../BEPiD/XCode Projects/collectionViewCell_teste/collectionViewCell_teste/AcceptedRequestCell.xib"; sourceTree = "<group>"; };
 		6E5513381D5BB0D4006860EB /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		6E55133B1D5BE765006860EB /* PicturesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicturesCell.swift; sourceTree = "<group>"; };
 		6E5513421D5C001A006860EB /* SavePhotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavePhotos.swift; sourceTree = "<group>"; };
@@ -44,7 +43,8 @@
 		6EBE97441D5A310900DFC9B1 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Italic.ttf"; path = "../../BEPiD/XCode Projects/HelpMiga_CloudKit/MapKitTutorial/Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		6EBE97451D5A310900DFC9B1 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../BEPiD/HelpMiga_final/MapKitTutorial/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		6EBE97471D5A363F00DFC9B1 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		6EFE6F9A1D5FCFE000D3303B /* AcceptedRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedRequestCell.swift; sourceTree = "<group>"; };
+		6EE225F31D5FDAF70003F8E0 /* AcceptedRequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcceptedRequestCell.xib; sourceTree = "<group>"; };
+		6EFE6FA41D5FD86800D3303B /* AcceptedRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedRequestCell.swift; sourceTree = "<group>"; };
 		D1FD28251D59302B0067C134 /* HelpMiga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpMiga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FD28281D59302B0067C134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1FD282A1D59302B0067C134 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -69,9 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				6E55132A1D5A5326006860EB /* AskHelpViewController.swift */,
-				6E5513331D5BA1FD006860EB /* AcceptedRequestCell.xib */,
 				6E5513381D5BB0D4006860EB /* HeaderView.swift */,
-				6EFE6F9A1D5FCFE000D3303B /* AcceptedRequestCell.swift */,
+				6EFE6FA41D5FD86800D3303B /* AcceptedRequestCell.swift */,
 			);
 			name = AskHelp;
 			sourceTree = "<group>";
@@ -114,6 +113,7 @@
 		D1FD281C1D59302B0067C134 = {
 			isa = PBXGroup;
 			children = (
+				6EE225F31D5FDAF70003F8E0 /* AcceptedRequestCell.xib */,
 				D1FD28271D59302B0067C134 /* HelpMiga */,
 				D1FD28261D59302B0067C134 /* Products */,
 			);
@@ -231,12 +231,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EE225F71D5FDBE80003F8E0 /* AcceptedRequestCell.xib in Resources */,
 				6E5513401D5BF8E1006860EB /* Roboto-Italic.ttf in Resources */,
 				6E5513411D5BF8E3006860EB /* Roboto-Regular.ttf in Resources */,
 				D1FD28331D59302B0067C134 /* LaunchScreen.storyboard in Resources */,
 				D1FD28301D59302B0067C134 /* Assets.xcassets in Resources */,
 				6E55133E1D5BF8DD006860EB /* Roboto-BlackItalic.ttf in Resources */,
-				6E5513351D5BA1FD006860EB /* AcceptedRequestCell.xib in Resources */,
 				D1FD282E1D59302B0067C134 /* Main.storyboard in Resources */,
 				6E55133F1D5BF8DF006860EB /* Roboto-Bold.ttf in Resources */,
 				6E55133D1D5BF8DA006860EB /* Roboto-Black.ttf in Resources */,
@@ -250,9 +250,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EFE6FA51D5FD86800D3303B /* AcceptedRequestCell.swift in Sources */,
 				6E5513431D5C001A006860EB /* SavePhotos.swift in Sources */,
 				6E55132D1D5A5338006860EB /* RequestsViewController.swift in Sources */,
-				6EFE6F9B1D5FCFE000D3303B /* AcceptedRequestCell.swift in Sources */,
 				6E5513391D5BB0D4006860EB /* HeaderView.swift in Sources */,
 				D1FD282B1D59302B0067C134 /* LoginViewController.swift in Sources */,
 				6E55132B1D5A5326006860EB /* AskHelpViewController.swift in Sources */,

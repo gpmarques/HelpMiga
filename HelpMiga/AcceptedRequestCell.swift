@@ -20,15 +20,14 @@ class AcceptedRequestCell: UICollectionViewCell {
     
     @IBAction func callButton(sender: AnyObject) {
     }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        
-        image.layer.cornerRadius = image.frame.size.width / 2;
-        image.clipsToBounds = true
-        image.layer.borderWidth = 3
-        image.layer.borderColor = UIColor.whiteColor().CGColor
-        whiteView.layer.cornerRadius = 10
-    }
-    
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//        
+//        image.layer.cornerRadius = image.frame.size.width / 2
+//        image.clipsToBounds = true
+//        image.layer.borderWidth = 3
+//        image.layer.borderColor = UIColor.whiteColor().CGColor
+//        whiteView.layer.cornerRadius = 10
+//    }
 }

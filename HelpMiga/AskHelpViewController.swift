@@ -86,7 +86,9 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
         
         let cell : AcceptedRequestCell = collectionView.dequeueReusableCellWithReuseIdentifier("AcceptedRequestIdentifier", forIndexPath: indexPath) as! AcceptedRequestCell
         
-        //mudar pras infos das pessoas que aceitaram o pedido
+        
+        
+//        mudar pras infos das pessoas que aceitaram o pedido
         cell.name.text = "Fulana"
         cell.image.image = UIImage(named: "girl2")
         cell.distance.text = "3 minutes from you."
@@ -207,9 +209,9 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
         }
         
         
-        
-        let nib = UINib(nibName: "AcceptedRequestCell", bundle: nil)
-        self.acceptedRequestCollectionView.registerNib(nib, forCellWithReuseIdentifier: "AcceptedRequestIdentifier")
+//        
+//        let nib = UINib(nibName: "AcceptedRequestCell", bundle: nil)
+//        self.acceptedRequestCollectionView.registerNib(nib, forCellWithReuseIdentifier: "AcceptedRequestIdentifier")
         
     }
     
