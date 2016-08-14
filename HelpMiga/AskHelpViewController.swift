@@ -89,9 +89,9 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
         
         
 //        mudar pras infos das pessoas que aceitaram o pedido
-        cell.name.text = "Fulana"
-        cell.image.image = UIImage(named: "girl2")
-        cell.distance.text = "3 minutes from you."
+//        cell.name.text = "Fulana"
+//        cell.image.image = UIImage(named: "girl2")
+//        cell.distance.text = "3 minutes from you."
         return cell
     }
     

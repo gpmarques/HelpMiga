@@ -15,7 +15,6 @@
 		6E55133C1D5BE765006860EB /* PicturesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E55133B1D5BE765006860EB /* PicturesCell.swift */; };
 		6E5513431D5C001A006860EB /* SavePhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5513421D5C001A006860EB /* SavePhotos.swift */; };
 		6EBE97481D5A363F00DFC9B1 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBE97471D5A363F00DFC9B1 /* SignInViewController.swift */; };
-		6EE225F71D5FDBE80003F8E0 /* ARCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EE225F31D5FDAF70003F8E0 /* ARCell.xib */; };
 		6EE226051D6026350003F8E0 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EE226001D6026270003F8E0 /* Roboto-Black.ttf */; };
 		6EE226061D60263A0003F8E0 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EE226011D6026270003F8E0 /* Roboto-BlackItalic.ttf */; };
 		6EE226071D60263F0003F8E0 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EE226021D6026270003F8E0 /* Roboto-Bold.ttf */; };
@@ -38,8 +37,6 @@
 		6E55133B1D5BE765006860EB /* PicturesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicturesCell.swift; sourceTree = "<group>"; };
 		6E5513421D5C001A006860EB /* SavePhotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavePhotos.swift; sourceTree = "<group>"; };
 		6EBE97471D5A363F00DFC9B1 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		6EE225F31D5FDAF70003F8E0 /* ARCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ARCell.xib; path = /Users/priscilarosa/Documents/HelpMiga_atual/ARCell.xib; sourceTree = "<absolute>"; };
-		6EE225FE1D6022C90003F8E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ARCell.xib; sourceTree = "<group>"; };
 		6EE226001D6026270003F8E0 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		6EE226011D6026270003F8E0 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		6EE226021D6026270003F8E0 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -102,7 +99,6 @@
 		D1FD281C1D59302B0067C134 = {
 			isa = PBXGroup;
 			children = (
-				6EE225FF1D6022C90003F8E0 /* ARCell.xib */,
 				D1FD28271D59302B0067C134 /* HelpMiga */,
 				D1FD28261D59302B0067C134 /* Products */,
 			);
@@ -213,7 +209,6 @@
 				6EE226071D60263F0003F8E0 /* Roboto-Bold.ttf in Resources */,
 				6EE226061D60263A0003F8E0 /* Roboto-BlackItalic.ttf in Resources */,
 				6EE226051D6026350003F8E0 /* Roboto-Black.ttf in Resources */,
-				6EE225F71D5FDBE80003F8E0 /* ARCell.xib in Resources */,
 				D1FD28331D59302B0067C134 /* LaunchScreen.storyboard in Resources */,
 				D1FD28301D59302B0067C134 /* Assets.xcassets in Resources */,
 				D1FD282E1D59302B0067C134 /* Main.storyboard in Resources */,
@@ -244,14 +239,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6EE225FF1D6022C90003F8E0 /* ARCell.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6EE225FE1D6022C90003F8E0 /* Base */,
-			);
-			name = ARCell.xib;
-			sourceTree = "<group>";
-		};
 		D1FD282C1D59302B0067C134 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
