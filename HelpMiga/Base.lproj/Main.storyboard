@@ -12,11 +12,15 @@
             <string>Roboto-Black</string>
             <string>Roboto-Black</string>
         </mutableArray>
+        <mutableArray key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </mutableArray>
         <mutableArray key="Roboto-Italic.ttf">
             <string>Roboto-Italic</string>
             <string>Roboto-Italic</string>
         </mutableArray>
         <mutableArray key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
@@ -377,7 +381,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="zda-Hd-bP3">
                                 <rect key="frame" x="-46" y="300" width="300" height="180"/>
                             </imageView>
-                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DpB-B8-Y6S">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DpB-B8-Y6S">
                                 <rect key="frame" x="0.0" y="311" width="600" height="240"/>
                                 <color key="backgroundColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="kAB-8e-UGa">
@@ -393,8 +397,70 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="295" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vt8-ed-BsY">
+                                                    <rect key="frame" x="20" y="18" width="265" height="56"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl2" translatesAutoresizingMaskIntoConstraints="NO" id="oha-sJ-nvs">
+                                                            <rect key="frame" x="-12" y="-5" width="66" height="66"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="oha-sJ-nvs" secondAttribute="height" multiplier="1:1" id="vqd-gn-ZJ9"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 minutes from you." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMy-aD-dtL">
+                                                            <rect key="frame" x="64" y="34" width="152.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                                            <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNA-2r-FNa">
+                                                            <rect key="frame" x="220" y="6" width="25" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="25" id="dUV-6B-1Lf"/>
+                                                                <constraint firstAttribute="height" constant="44" id="p8L-pr-HKZ"/>
+                                                            </constraints>
+                                                            <state key="normal" backgroundImage="call"/>
+                                                            <connections>
+                                                                <action selector="acceptedRequestCallButton:" destination="wsy-wl-0Zo" eventType="touchUpInside" id="stO-mi-Aq3"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arv-yE-6L4">
+                                                            <rect key="frame" x="64" y="9" width="45.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                                                            <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="oha-sJ-nvs" firstAttribute="centerY" secondItem="vt8-ed-BsY" secondAttribute="centerY" id="6Vq-rN-YJU"/>
+                                                        <constraint firstItem="arv-yE-6L4" firstAttribute="top" secondItem="vt8-ed-BsY" secondAttribute="top" constant="9" id="Pbb-8L-U1C"/>
+                                                        <constraint firstAttribute="bottom" secondItem="oha-sJ-nvs" secondAttribute="bottom" constant="-5" id="Qg6-6L-OzE"/>
+                                                        <constraint firstItem="oha-sJ-nvs" firstAttribute="leading" secondItem="vt8-ed-BsY" secondAttribute="leading" constant="-12" id="RhT-nU-nzR"/>
+                                                        <constraint firstItem="tNA-2r-FNa" firstAttribute="centerY" secondItem="vt8-ed-BsY" secondAttribute="centerY" id="SZv-6C-Zjo"/>
+                                                        <constraint firstItem="jMy-aD-dtL" firstAttribute="top" secondItem="arv-yE-6L4" secondAttribute="bottom" constant="5" id="TX1-MK-us6"/>
+                                                        <constraint firstItem="arv-yE-6L4" firstAttribute="leading" secondItem="jMy-aD-dtL" secondAttribute="leading" id="aX2-aA-yxS"/>
+                                                        <constraint firstAttribute="trailing" secondItem="tNA-2r-FNa" secondAttribute="trailing" constant="20" id="fj9-pV-Dzh"/>
+                                                        <constraint firstItem="oha-sJ-nvs" firstAttribute="top" secondItem="vt8-ed-BsY" secondAttribute="top" constant="-5" id="ozI-hn-0u3"/>
+                                                        <constraint firstItem="arv-yE-6L4" firstAttribute="leading" secondItem="oha-sJ-nvs" secondAttribute="trailing" constant="10" id="zEU-xL-fsm"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="vt8-ed-BsY" firstAttribute="leading" secondItem="wsy-wl-0Zo" secondAttribute="leadingMargin" constant="12" id="7au-Oe-LwC"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="vt8-ed-BsY" secondAttribute="trailing" constant="2" id="VOM-ej-w6t"/>
+                                            <constraint firstItem="vt8-ed-BsY" firstAttribute="top" secondItem="wsy-wl-0Zo" secondAttribute="topMargin" constant="10" id="Y42-aa-ga3"/>
+                                            <constraint firstItem="vt8-ed-BsY" firstAttribute="bottom" secondItem="wsy-wl-0Zo" secondAttribute="bottomMargin" constant="5" id="jRx-5Y-8JS"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="acceptedRequestDistance" destination="jMy-aD-dtL" id="pwX-HQ-ktK"/>
+                                            <outlet property="acceptedRequestImageView" destination="oha-sJ-nvs" id="5xd-6A-eIj"/>
+                                            <outlet property="acceptedRequestName" destination="arv-yE-6L4" id="KRn-9A-6fQ"/>
+                                            <outlet property="whiteView" destination="vt8-ed-BsY" id="krZ-aG-LOT"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionHeader" id="aNP-tE-Ql0" customClass="HeaderView" customModule="HelpMiga" customModuleProvider="target">
@@ -1051,6 +1117,7 @@
         <image name="addPictures" width="244" height="44"/>
         <image name="ask_help_bubble_round" width="136" height="137"/>
         <image name="back" width="18" height="30"/>
+        <image name="call" width="25" height="41"/>
         <image name="callLarge" width="291" height="42"/>
         <image name="camera_button" width="79" height="79"/>
         <image name="complete_request" width="250" height="62"/>

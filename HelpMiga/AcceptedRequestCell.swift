@@ -10,7 +10,12 @@ import UIKit
 
 class AcceptedRequestCell: UICollectionViewCell {
     
-    //image(imageview), name(label), distance(label), whiteview, callbutton
+    @IBOutlet weak var whiteView: UIView!
+    @IBOutlet weak var acceptedRequestImageView: UIImageView!
+    @IBOutlet weak var acceptedRequestName: UILabel!
+    @IBOutlet weak var acceptedRequestDistance: UILabel!
+    @IBAction func acceptedRequestCallButton(sender: AnyObject) {
+    }
     
 //    override func awakeFromNib() {
 //        super.awakeFromNib()

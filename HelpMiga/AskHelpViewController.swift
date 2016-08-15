@@ -29,6 +29,8 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     @IBOutlet weak var closeRequestOutlet: UIButton!
     @IBOutlet weak var askHelpOutlet: UIButton!
     
+    
+    
     @IBAction func askHelpButton(sender: AnyObject) {
         interfaceChangesWhenAskHelpClicked(sender)
 
@@ -84,14 +86,12 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell : AcceptedRequestCell = collectionView.dequeueReusableCellWithReuseIdentifier("AcceptedRequestIdentifier", forIndexPath: indexPath) as! AcceptedRequestCell
-        
-        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AcceptedRequestIdentifier", forIndexPath: indexPath) as! AcceptedRequestCell
         
 //        mudar pras infos das pessoas que aceitaram o pedido
-//        cell.name.text = "Fulana"
-//        cell.image.image = UIImage(named: "girl2")
-//        cell.distance.text = "3 minutes from you."
+        cell.acceptedRequestName.text = "Fulana"
+        cell.acceptedRequestImageView.image = UIImage(named: "girl2")
+        cell.acceptedRequestDistance.text = "5 minutes from you"
         return cell
     }
     
@@ -207,11 +207,6 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
 //            locationManager!.requestWhenInUseAuthorization()
             locationManager!.requestAlwaysAuthorization()
         }
-        
-        
-//        
-//        let nib = UINib(nibName: "AcceptedRequestCell", bundle: nil)
-//        self.acceptedRequestCollectionView.registerNib(nib, forCellWithReuseIdentifier: "AcceptedRequestIdentifier")
         
     }
     
