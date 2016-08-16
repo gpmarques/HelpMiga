@@ -21,6 +21,8 @@
 		6EE226081D6026440003F8E0 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EE226031D6026270003F8E0 /* Roboto-Italic.ttf */; };
 		6EE226091D6026490003F8E0 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EE226041D6026270003F8E0 /* Roboto-Regular.ttf */; };
 		6EFE6FA51D5FD86800D3303B /* AcceptedRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE6FA41D5FD86800D3303B /* AcceptedRequestCell.swift */; };
+		7C3EAF6B7B8D341ED5ADB220 /* Pods_HelpMiga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F534E18E02DA7EE6947091EE /* Pods_HelpMiga.framework */; };
+		D1E3956E1D62D8AB0020A143 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E3956D1D62D8AB0020A143 /* GoogleService-Info.plist */; };
 		D1FD28291D59302B0067C134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD28281D59302B0067C134 /* AppDelegate.swift */; };
 		D1FD282B1D59302B0067C134 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD282A1D59302B0067C134 /* LoginViewController.swift */; };
 		D1FD282E1D59302B0067C134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FD282C1D59302B0067C134 /* Main.storyboard */; };
@@ -43,6 +45,9 @@
 		6EE226031D6026270003F8E0 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		6EE226041D6026270003F8E0 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		6EFE6FA41D5FD86800D3303B /* AcceptedRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedRequestCell.swift; sourceTree = "<group>"; };
+		9A1C7FC4BB45DE14BAD88D4B /* Pods-HelpMiga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMiga.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelpMiga/Pods-HelpMiga.debug.xcconfig"; sourceTree = "<group>"; };
+		CF2CFB485597138D2B769D67 /* Pods-HelpMiga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMiga.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelpMiga/Pods-HelpMiga.release.xcconfig"; sourceTree = "<group>"; };
+		D1E3956D1D62D8AB0020A143 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1FD28251D59302B0067C134 /* HelpMiga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpMiga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FD28281D59302B0067C134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1FD282A1D59302B0067C134 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +55,7 @@
 		D1FD282F1D59302B0067C134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1FD28321D59302B0067C134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1FD28341D59302B0067C134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F534E18E02DA7EE6947091EE /* Pods_HelpMiga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelpMiga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +63,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C3EAF6B7B8D341ED5ADB220 /* Pods_HelpMiga.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E60E665F93845832B2C42E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F534E18E02DA7EE6947091EE /* Pods_HelpMiga.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6E55133A1D5BBAE1006860EB /* AskHelp */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +116,8 @@
 			children = (
 				D1FD28271D59302B0067C134 /* HelpMiga */,
 				D1FD28261D59302B0067C134 /* Products */,
+				F0B59F2E52662E241EAB91E5 /* Pods */,
+				3E60E665F93845832B2C42E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +152,7 @@
 		D1FD28441D59343A0067C134 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D1E3956D1D62D8AB0020A143 /* GoogleService-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -146,6 +164,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		F0B59F2E52662E241EAB91E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A1C7FC4BB45DE14BAD88D4B /* Pods-HelpMiga.debug.xcconfig */,
+				CF2CFB485597138D2B769D67 /* Pods-HelpMiga.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1FD28371D59302B0067C134 /* Build configuration list for PBXNativeTarget "HelpMiga" */;
 			buildPhases = (
+				857EDC469836595BB56835B7 /* [CP] Check Pods Manifest.lock */,
 				D1FD28211D59302B0067C134 /* Sources */,
 				D1FD28221D59302B0067C134 /* Frameworks */,
 				D1FD28231D59302B0067C134 /* Resources */,
+				06CDA9413672F0B3DA8E30C9 /* [CP] Embed Pods Frameworks */,
+				B5A5C893F44DAF7101876ADB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,6 +236,7 @@
 			files = (
 				6EE226091D6026490003F8E0 /* Roboto-Regular.ttf in Resources */,
 				6EE226081D6026440003F8E0 /* Roboto-Italic.ttf in Resources */,
+				D1E3956E1D62D8AB0020A143 /* GoogleService-Info.plist in Resources */,
 				6EE226071D60263F0003F8E0 /* Roboto-Bold.ttf in Resources */,
 				6EE226061D60263A0003F8E0 /* Roboto-BlackItalic.ttf in Resources */,
 				6EE226051D6026350003F8E0 /* Roboto-Black.ttf in Resources */,
@@ -216,6 +247,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06CDA9413672F0B3DA8E30C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelpMiga/Pods-HelpMiga-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		857EDC469836595BB56835B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B5A5C893F44DAF7101876ADB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelpMiga/Pods-HelpMiga-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D1FD28211D59302B0067C134 /* Sources */ = {
@@ -343,6 +422,7 @@
 		};
 		D1FD28381D59302B0067C134 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A1C7FC4BB45DE14BAD88D4B /* Pods-HelpMiga.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HelpMiga/Info.plist;
@@ -354,6 +434,7 @@
 		};
 		D1FD28391D59302B0067C134 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF2CFB485597138D2B769D67 /* Pods-HelpMiga.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HelpMiga/Info.plist;
