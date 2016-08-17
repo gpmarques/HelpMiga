@@ -399,22 +399,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vt8-ed-BsY">
-                                                    <rect key="frame" x="20" y="18" width="265" height="56"/>
+                                                    <rect key="frame" x="20" y="10" width="265" height="62"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl2" translatesAutoresizingMaskIntoConstraints="NO" id="oha-sJ-nvs">
-                                                            <rect key="frame" x="-12" y="-5" width="66" height="66"/>
+                                                            <rect key="frame" x="-12" y="-5" width="72" height="72"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="oha-sJ-nvs" secondAttribute="height" multiplier="1:1" id="vqd-gn-ZJ9"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 minutes from you." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMy-aD-dtL">
-                                                            <rect key="frame" x="64" y="34" width="152.5" height="20"/>
+                                                            <rect key="frame" x="70" y="34" width="152.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                                             <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNA-2r-FNa">
-                                                            <rect key="frame" x="220" y="6" width="25" height="44"/>
+                                                            <rect key="frame" x="220" y="9" width="25" height="44"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="25" id="dUV-6B-1Lf"/>
                                                                 <constraint firstAttribute="height" constant="44" id="p8L-pr-HKZ"/>
@@ -425,7 +425,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arv-yE-6L4">
-                                                            <rect key="frame" x="64" y="9" width="45.5" height="20"/>
+                                                            <rect key="frame" x="70" y="9" width="45.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                                             <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -451,10 +451,18 @@
                                         <color key="backgroundColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="vt8-ed-BsY" firstAttribute="leading" secondItem="wsy-wl-0Zo" secondAttribute="leadingMargin" constant="12" id="7au-Oe-LwC"/>
+                                            <constraint firstItem="vt8-ed-BsY" firstAttribute="top" secondItem="wsy-wl-0Zo" secondAttribute="top" constant="10" id="Dc7-Mp-l4F"/>
+                                            <constraint firstAttribute="bottom" secondItem="vt8-ed-BsY" secondAttribute="bottom" constant="5" id="OsA-cT-Jzd"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="vt8-ed-BsY" secondAttribute="trailing" constant="2" id="VOM-ej-w6t"/>
                                             <constraint firstItem="vt8-ed-BsY" firstAttribute="top" secondItem="wsy-wl-0Zo" secondAttribute="topMargin" constant="10" id="Y42-aa-ga3"/>
                                             <constraint firstItem="vt8-ed-BsY" firstAttribute="bottom" secondItem="wsy-wl-0Zo" secondAttribute="bottomMargin" constant="5" id="jRx-5Y-8JS"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Y42-aa-ga3"/>
+                                                <exclude reference="jRx-5Y-8JS"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outlet property="acceptedRequestDistance" destination="jMy-aD-dtL" id="pwX-HQ-ktK"/>
                                             <outlet property="acceptedRequestImageView" destination="oha-sJ-nvs" id="5xd-6A-eIj"/>

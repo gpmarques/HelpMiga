@@ -88,7 +88,13 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AcceptedRequestIdentifier", forIndexPath: indexPath) as! AcceptedRequestCell
         
-//        mudar pras infos das pessoas que aceitaram o pedido
+        cell.acceptedRequestImageView.layer.cornerRadius = cell.acceptedRequestImageView.frame.size.width / 2
+        cell.acceptedRequestImageView.clipsToBounds = true
+        cell.acceptedRequestImageView.layer.borderWidth = 3
+        cell.acceptedRequestImageView.layer.borderColor = UIColor.whiteColor().CGColor
+        cell.whiteView.layer.cornerRadius = 10
+        
+        //        mudar pras infos das pessoas que aceitaram o pedido
         cell.acceptedRequestName.text = "Fulana"
         cell.acceptedRequestImageView.image = UIImage(named: "girl2")
         cell.acceptedRequestDistance.text = "5 minutes from you"
