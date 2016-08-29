@@ -745,7 +745,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl1" translatesAutoresizingMaskIntoConstraints="NO" id="L5s-UF-9m9">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="L5s-UF-9m9">
                                         <rect key="frame" x="240" y="60" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="C5O-Wg-tTa"/>
@@ -1154,5 +1154,6 @@
         <image name="tabbar_camera" width="24" height="19"/>
         <image name="tabbar_profile" width="22" height="19"/>
         <image name="tabbar_requests" width="27" height="25"/>
+        <image name="user" width="220" height="220"/>
     </resources>
 </document>
