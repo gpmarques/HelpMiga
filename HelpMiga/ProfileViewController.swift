@@ -78,7 +78,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             self.profileEmailTextField.text = snapshot.value!["email"] as? String
             self.profilePhoneTextField.text = snapshot.value!["cel"] as? String
         
-            let selfieRef = self.userDAO.storage.child(self.profileNameTextfield.text!+uid+"/"+"id.jpg")
+            let selfieRef = self.userDAO.storage.child(self.profileNameTextfield.text!+uid+"/"+"selfie.jpg")
             selfieRef.dataWithMaxSize(10 * 1024 * 1024, completion: { (data, error) in
                 
                 if error != nil {
