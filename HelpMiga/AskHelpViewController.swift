@@ -40,7 +40,7 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     
     @IBAction func closeRequestButton(sender: AnyObject) {
         interfaceChangesWhenCloseRequestClicked(sender)
-        userDAO.userHelp(false)
+//        userDAO.userHelp(false)
 
     }
   

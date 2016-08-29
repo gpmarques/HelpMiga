@@ -15,13 +15,14 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     @IBOutlet weak var profileEmailTextField: UITextField!
     @IBOutlet weak var profilePhoneTextField: UITextField!
     var userDAO = UserDAO.getSingleton()
+    var myActivityIndicator: UIActivityIndicatorView!
     
     
     @IBAction func logOutButton(sender: AnyObject) {
         // segue para a tela de login
         let auth = userDAO.getAuthSingleton
-        try! auth.signOut()
-        
+        try! auth().signOut()
+        performSegueWithIdentifier("logOutSegue", sender: nil)
     }
     
     @IBAction func editProfilePhoto(sender: AnyObject) {
@@ -51,6 +52,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+        myActivityIndicator.center = CGPoint(x: view.center.x , y: view.frame.height*0.429348)
+        view.addSubview(myActivityIndicator)
+        
         self.hideKeyboardWhenTappedAround()
         
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width/2
@@ -66,18 +71,22 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
         let uid = authUser.uid
         
         userDAO.ref.child("users").child(uid).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            
+            self.myActivityIndicator.startAnimating()
         
             self.profileNameTextfield.text = snapshot.value!["username"] as? String
             self.profileEmailTextField.text = snapshot.value!["email"] as? String
             self.profilePhoneTextField.text = snapshot.value!["cel"] as? String
         
             let selfieRef = self.userDAO.storage.child(self.profileNameTextfield.text!+uid+"/"+"id.jpg")
-            selfieRef.dataWithMaxSize(2 * 1024 * 1024, completion: { (data, error) in
+            selfieRef.dataWithMaxSize(10 * 1024 * 1024, completion: { (data, error) in
                 
                 if error != nil {
                     print("*** \(error?.localizedDescription) ***")
+                    print ("ERRO DOWNLOAD<<<<<<<<<<<<<<<<<<<<<<<<<<")
                 } else {
                     self.profileImageView.image = UIImage(data: data!)
+                    self.myActivityIndicator.stopAnimating()
                 }
                 
             })
