@@ -6,6 +6,10 @@ target 'HelpMiga' do
   use_frameworks!
 
   # Pods for HelpMiga
-  pod ‘Firebase/Core’
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Messaging'
 
 end

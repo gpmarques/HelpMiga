@@ -29,15 +29,18 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     @IBOutlet weak var closeRequestOutlet: UIButton!
     @IBOutlet weak var askHelpOutlet: UIButton!
     
-    
+    var userDAO = UserDAO.getSingleton()
     
     @IBAction func askHelpButton(sender: AnyObject) {
         interfaceChangesWhenAskHelpClicked(sender)
+        let ref = userDAO.getRTDBSingleton()
+        ref.child("sos")
 
     }
     
     @IBAction func closeRequestButton(sender: AnyObject) {
         interfaceChangesWhenCloseRequestClicked(sender)
+        userDAO.userHelp(false)
 
     }
   

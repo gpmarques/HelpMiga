@@ -17,10 +17,11 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var requestedHelpDistance: UILabel!
     @IBOutlet weak var requestedHelpMapView: MKMapView!
     @IBOutlet weak var requestView: UIView!
-    
     @IBOutlet weak var noRequestsLabel: UILabel!
     @IBOutlet weak var logo: UIImageView!
-    
+    var userDAO: UserDAO!
+    var helper: User?
+
     @IBAction func callRequestedHelpButton(sender: AnyObject) {
     }
     
@@ -37,14 +38,43 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         requestView.hidden = true
         noRequestsLabel.hidden = false
         logo.hidden = false
+        
     }
+    
+    private func observeSOS() {
+        
+        let ref = userDAO.getRTDBSingleton()
+        let sosQuery = ref.child("sos")
+        
+        sosQuery.observeEventType(.ChildAdded, withBlock: { (snapshot) in
+            
+            let uid = snapshot.value!["id"] as! String
+            let name = snapshot.value!["name"] as! String
+            let lat = snapshot.value!["lat"] as! Double
+            let long = snapshot.value!["lat"] as! Double
+            let time = snapshot.value!["lat"] as! Double
+            let helped = snapshot.value!["helped"] as! Bool
+            
+            self.helper = User(uid: uid, name: name, lat: lat, long: long, time: time, helped: helped)
+            
+        })
+    }
+    
+    private func checkUser() {
+        
+        
+        
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //comentar as 3 linhas abaixo pra aparecer a view do request
-        requestView.hidden = true
-        noRequestsLabel.hidden = false
-        logo.hidden = false
+//        requestView.hidden = true
+//        noRequestsLabel.hidden = false
+//        logo.hidden = false
 
         requestedHelpImageView.layer.cornerRadius = requestedHelpImageView.frame.size.width/2
         requestedHelpImageView.clipsToBounds = true
@@ -52,6 +82,8 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         requestedHelpImageView.layer.borderColor = UIColor.whiteColor().CGColor
         requestedHelpMapView.layer.cornerRadius = 10
         requestedHelpMapView.clipsToBounds = true
+        
+        userDAO = UserDAO.getSingleton()
     }
 
     override func didReceiveMemoryWarning() {

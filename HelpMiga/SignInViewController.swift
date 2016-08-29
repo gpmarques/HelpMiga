@@ -7,6 +7,17 @@
 //
 
 import UIKit
+import Firebase
+
+extension UIViewController {
+    func showAlert(title: String, msg: String, actionButton: String
+        ){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
+        let action = UIAlertAction(title: actionButton , style: .Default, handler: nil)
+        alert.addAction(action)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+}
 
 class SignInViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -19,6 +30,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var repeatPasswordTextField: UITextField!
     @IBOutlet weak var idImageView: UIImageView!
     @IBOutlet weak var selfieImageView: UIImageView!
+    var myActivityIndicator: UIActivityIndicatorView!
+    let userDAO = UserDAO.getSingleton()
 
     @IBAction func idButton(sender: AnyObject) {
         botaoImagem = idImageView
@@ -49,19 +62,73 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     }
     
     @IBAction func sendToApprovalButton(sender: AnyObject) {
-        let userName = nameTextField.text
-        let userEmail = emailTextField.text
-        let userPassword = passwordTextField.text
-        let repeatPassword = repeatPasswordTextField.text
+        let username = nameTextField.text
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        let confPassword = repeatPasswordTextField.text
         
-        if userName?.isEmpty == true || userEmail?.isEmpty == true || userPassword?.isEmpty == true || repeatPassword?.isEmpty == true {
-            alert ("All fields must be filled out!", title: "Ops!")
-            return
-        }
-        
-        if userPassword != repeatPassword {
-            alert ("Passwords don't match", title: "Ops!")
-            return
+        if email != "" && password != "" && confPassword != "" && username != "" {
+            
+            if password == confPassword {
+                myActivityIndicator.startAnimating()
+                FIRAuth.auth()?.createUserWithEmail(email!, password: password!, completion: { user, error in
+                    
+                    if error != nil {
+                        
+                        if let errorCode = FIRAuthErrorCode(rawValue: error!.code) {
+                            switch errorCode {
+                            case .ErrorCodeInvalidCredential:
+                                self.showAlert("Invalid Credentials!", msg: "Please, try again.", actionButton: "OK")
+                            case .ErrorCodeNetworkError:
+                                self.showAlert("Network Error!", msg: "An error occurred while attempting to contact the authentication server. Try again", actionButton: "OK")
+                            case .ErrorCodeOperationNotAllowed:
+                                self.showAlert("Bummer!", msg: "The administrator disabled sign in with the specified identity provider", actionButton: "OK")
+                            case .ErrorCodeEmailAlreadyInUse:
+                                self.showAlert("Oops!", msg: "The email used to attempt a sign up already exists. Please, try again", actionButton: "OK")
+                            case .ErrorCodeInvalidEmail:
+                                self.showAlert("Error", msg: "The email is invalid. Try again.", actionButton: "OK")
+                            case .ErrorCodeTooManyRequests:
+                                self.showAlert("Error", msg: "Too many requests were made to a serve method", actionButton: "OK")
+                            case .ErrorCodeWeakPassword:
+                                self.showAlert("Error", msg: "Your password must be at least 6 characters long. Try again.", actionButton: "OK")
+                                
+                                
+                            default:
+                                self.showAlert("Ups!", msg: "An error occur. Please, try again.", actionButton: "OK")
+                            }
+                        }
+                    } else if user != nil {
+                        // creating user in the realtime database and sending email verification
+                        let uid = user!.uid
+                        self.userDAO.createUser(uid, name: username!, email: email!, cel: "0000-0000", lat: 0, long: 0, approved: false)
+                        user!.sendEmailVerificationWithCompletion(nil)
+                        
+                        // uploading the id and selfie picture
+                        let dataIDImage = UIImageJPEGRepresentation(self.idImageView.image!, 1.0)
+                        let dataSelfieImage = UIImageJPEGRepresentation(self.selfieImageView.image!, 1.0)
+                        let upload = self.userDAO.uploadImage(dataIDImage!, userID: uid, userName: username!, imageName: "id")
+                        let upload2 = self.userDAO.uploadImage(dataSelfieImage!, userID: uid, userName: username!, imageName: "selfie")
+                        if upload && upload2 {
+                            print("*** UPLOADED ***")
+                        } else {
+                            print("*** UPLOAD ERROR ***")
+                        }
+                    
+                        let alert = UIAlertController(title: "Great!", message: "You have successfully signed up.", preferredStyle: .Alert)
+                        let action = UIAlertAction(title: "OK" , style: .Default, handler: nil)
+                        alert.addAction(action)
+                        self.myActivityIndicator.stopAnimating()
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    }
+                    
+                })
+                
+            } else {
+                self.showAlert("Password Mismatch", msg: "The passwords you've entered do not match. Please, try again", actionButton: "OK")
+            }
+            
+        } else {
+            self.showAlert("Empty field", msg: "In order to sign up all fields must be filled. Please, try again", actionButton: "OK")
         }
     }
     
@@ -97,6 +164,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         self.repeatPasswordTextField.delegate = self
+        myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+        myActivityIndicator.center = CGPoint(x: view.center.x , y: view.frame.height*0.429348)
+        view.addSubview(myActivityIndicator)
     }
 
     override func didReceiveMemoryWarning() {

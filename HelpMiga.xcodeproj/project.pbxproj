@@ -23,6 +23,9 @@
 		6EFE6FA51D5FD86800D3303B /* AcceptedRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE6FA41D5FD86800D3303B /* AcceptedRequestCell.swift */; };
 		7C3EAF6B7B8D341ED5ADB220 /* Pods_HelpMiga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F534E18E02DA7EE6947091EE /* Pods_HelpMiga.framework */; };
 		D1E3956E1D62D8AB0020A143 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1E3956D1D62D8AB0020A143 /* GoogleService-Info.plist */; };
+		D1E395701D64EEAF0020A143 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E3956F1D64EEAF0020A143 /* DataService.swift */; };
+		D1E395721D64EF7C0020A143 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E395711D64EF7C0020A143 /* UserDAO.swift */; };
+		D1E395741D6E1F3C0020A143 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E395731D6E1F3C0020A143 /* User.swift */; };
 		D1FD28291D59302B0067C134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD28281D59302B0067C134 /* AppDelegate.swift */; };
 		D1FD282B1D59302B0067C134 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FD282A1D59302B0067C134 /* LoginViewController.swift */; };
 		D1FD282E1D59302B0067C134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FD282C1D59302B0067C134 /* Main.storyboard */; };
@@ -48,6 +51,9 @@
 		9A1C7FC4BB45DE14BAD88D4B /* Pods-HelpMiga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMiga.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelpMiga/Pods-HelpMiga.debug.xcconfig"; sourceTree = "<group>"; };
 		CF2CFB485597138D2B769D67 /* Pods-HelpMiga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelpMiga.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelpMiga/Pods-HelpMiga.release.xcconfig"; sourceTree = "<group>"; };
 		D1E3956D1D62D8AB0020A143 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D1E3956F1D64EEAF0020A143 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		D1E395711D64EF7C0020A143 /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
+		D1E395731D6E1F3C0020A143 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1FD28251D59302B0067C134 /* HelpMiga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelpMiga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1FD28281D59302B0067C134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1FD282A1D59302B0067C134 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,15 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		D1E395751D6E1F400020A143 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				D1E3956F1D64EEAF0020A143 /* DataService.swift */,
+				D1E395711D64EF7C0020A143 /* UserDAO.swift */,
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
 		D1FD281C1D59302B0067C134 = {
 			isa = PBXGroup;
 			children = (
@@ -133,13 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				D1FD28471D59344E0067C134 /* Model */,
-				D1FD28441D59343A0067C134 /* Supporting Files */,
 				6E5513421D5C001A006860EB /* SavePhotos.swift */,
-				6EBE974A1D5A366800DFC9B1 /* Controller */,
 				6EBE97491D5A365400DFC9B1 /* View */,
-				D1FD28281D59302B0067C134 /* AppDelegate.swift */,
-				D1FD282F1D59302B0067C134 /* Assets.xcassets */,
-				D1FD28341D59302B0067C134 /* Info.plist */,
+				6EBE974A1D5A366800DFC9B1 /* Controller */,
+				D1FD28441D59343A0067C134 /* Supporting Files */,
 				6EE226001D6026270003F8E0 /* Roboto-Black.ttf */,
 				6EE226011D6026270003F8E0 /* Roboto-BlackItalic.ttf */,
 				6EE226021D6026270003F8E0 /* Roboto-Bold.ttf */,
@@ -153,6 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				D1E3956D1D62D8AB0020A143 /* GoogleService-Info.plist */,
+				D1FD28281D59302B0067C134 /* AppDelegate.swift */,
+				D1FD282F1D59302B0067C134 /* Assets.xcassets */,
+				D1FD28341D59302B0067C134 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -160,6 +175,8 @@
 		D1FD28471D59344E0067C134 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D1E395751D6E1F400020A143 /* DAO */,
+				D1E395731D6E1F3C0020A143 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -304,7 +321,10 @@
 				6EFE6FA51D5FD86800D3303B /* AcceptedRequestCell.swift in Sources */,
 				6E5513431D5C001A006860EB /* SavePhotos.swift in Sources */,
 				6E55132D1D5A5338006860EB /* RequestsViewController.swift in Sources */,
+				D1E395701D64EEAF0020A143 /* DataService.swift in Sources */,
 				6E5513391D5BB0D4006860EB /* HeaderView.swift in Sources */,
+				D1E395721D64EF7C0020A143 /* UserDAO.swift in Sources */,
+				D1E395741D6E1F3C0020A143 /* User.swift in Sources */,
 				D1FD282B1D59302B0067C134 /* LoginViewController.swift in Sources */,
 				6E55132B1D5A5326006860EB /* AskHelpViewController.swift in Sources */,
 				D1FD28291D59302B0067C134 /* AppDelegate.swift in Sources */,
