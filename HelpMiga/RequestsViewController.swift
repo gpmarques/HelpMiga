@@ -66,9 +66,6 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
     
     private func checkHelper() {
         
-        
-        
-        
     }
     
     private func populateView(id: String, name: String, lat: Double, long: Double) {

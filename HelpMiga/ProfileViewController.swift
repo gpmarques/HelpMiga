@@ -46,7 +46,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     
     func textFieldShouldReturn(userText: UITextField) -> Bool {
         userText.resignFirstResponder()
-        return true;
+        return true
     }
 
     override func viewDidLoad() {
