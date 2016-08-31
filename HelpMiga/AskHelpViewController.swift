@@ -218,6 +218,11 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
             locationManager!.requestAlwaysAuthorization()
         }
         
+
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         let ref = userDAO.getRTDBSingleton()
         let currentUser = userDAO.getCurrentUser()
         let uid = currentUser?.uid
@@ -230,9 +235,7 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
             let email = snapshot.value!["email"] as! String
             
             self.user = User(uid: uid!,name: name, email: email, cel: cel, lat: lat, long: long)
-            
         })
-        
     }
     
     override func didReceiveMemoryWarning() {

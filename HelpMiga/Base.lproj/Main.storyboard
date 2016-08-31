@@ -104,7 +104,6 @@
                                                 <state key="normal" backgroundImage="loginButton"/>
                                                 <connections>
                                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="82y-jt-jnL"/>
-                                                    <segue destination="CcF-4r-zPu" kind="presentation" identifier="loginSegue" id="pSg-6n-q7U"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -183,6 +182,7 @@
                         <outlet property="emailTextField" destination="gOn-cm-cy0" id="3It-Gm-b0b"/>
                         <outlet property="passwordTextField" destination="non-nF-G3F" id="CkK-iz-0UK"/>
                         <outlet property="scrollView" destination="Svk-c1-BMN" id="1Zm-7r-ed3"/>
+                        <segue destination="CcF-4r-zPu" kind="show" identifier="loginSegue" id="d8B-2m-Vfd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -361,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mh8-tE-6kc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1740" y="648"/>
+            <point key="canvasLocation" x="1861" y="466"/>
         </scene>
         <!--Ask Help-->
         <scene sceneID="5Xk-u7-gw5">
@@ -940,7 +940,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLb-FC-HHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="318"/>
+            <point key="canvasLocation" x="2419" y="691"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="bs4-vJ-3xr">

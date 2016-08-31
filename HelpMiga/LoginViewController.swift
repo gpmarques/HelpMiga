@@ -50,10 +50,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     case .ErrorCodeTooManyRequests:
                         self.showAlert("Error", msg: "Please, try again.", actionButton: "OK")
                     default:
-                        self.showAlert("Ups!", msg: "An error occurred. Please, try again.", actionButton: "OK")
+                        self.showAlert("Oops!", msg: "An error occurred. Please, try again.", actionButton: "OK")
                     }
                 }
             } else if user != nil {
+                print("ENTREI<<<<<<<<<<<<<")
                 self.myActivityIndicator.stopAnimating()
                 self.performSegueWithIdentifier("loginSegue", sender: sender)
             }
@@ -126,6 +127,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
             if user != nil {
+                print("**** ENTREI AUTOMATICO *****")
                 self.performSegueWithIdentifier("loginSegue", sender: nil)
             } else {
                 // No user is signed in.
