@@ -66,12 +66,11 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
     }
     
     private func populateView(id: String, name: String, lat: Double, long: Double) {
-        guard let data = self.userDAO.downloadImageData(id, name: name) else { return }
-        let image = UIImage(data: data)
         
         requestedHelpName.text = name
+        guard let data = self.userDAO.downloadImageData(id, name: name) else { return }
+        let image = UIImage(data: data)
         requestedHelpImageView.image = image
-        
     }
     
     
