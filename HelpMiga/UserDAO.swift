@@ -119,10 +119,22 @@ class UserDAO: DataService {
         return upload
     }
     
-    func downloadImage(uid: String) {
+    func downloadImageData(uid: String, name: String) -> NSData {
+    
+        var imageData: NSData!
+        let selfieRef = storage.child(name+uid+"/"+"selfie.jpg")
+        selfieRef.dataWithMaxSize(10 * 1024 * 1024, completion: { (data, error) in
+            
+            if error != nil {
+                print("*** \(error?.localizedDescription) ***")
+                print ("ERRO DOWNLOAD<<<<<<<<<<<<<<<<<<<<<<<<<<")
+            } else {
+                imageData = data
+                
+            }
+        })
         
-        
-        
+        return imageData
     }
     
     func askHelp(uid: String, name: String, cel: String, lat: Double, long: Double) {

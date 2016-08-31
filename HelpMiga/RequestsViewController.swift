@@ -54,8 +54,12 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
             let long = snapshot.value!["long"] as! Double
             let helped = snapshot.value!["helped"] as! Bool
             
+            
             let user = User(uid: uid, name: name, lat: lat, long: long, helped: helped)
             self.requestingHelp?.append(user)
+            self.populateView(uid, name: name, lat: lat, long: long)
+            
+            
             
         })
     }
@@ -66,6 +70,17 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         
         
     }
+    
+    private func populateView(id: String, name: String, lat: Double, long: Double) {
+        let data = self.userDAO.downloadImageData(id, name: name)
+        let image = UIImage(data: data)
+        
+        requestedHelpName.text = name
+        requestedHelpImageView.image = image
+        
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +98,7 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         requestedHelpMapView.clipsToBounds = true
         
         userDAO = UserDAO.getSingleton()
+        observeSOS()
     }
 
     override func didReceiveMemoryWarning() {
