@@ -45,19 +45,19 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         
         let ref = userDAO.getRTDBSingleton()
         let sosQuery = ref.child("sos")
+        let uid = userDAO.getCurrentUser()?.uid
         
         sosQuery.observeEventType(.ChildAdded, withBlock: { (snapshot) in
             
-            let uid = snapshot.value!["id"] as! String
             let name = snapshot.value!["name"] as! String
             let lat = snapshot.value!["lat"] as! Double
             let long = snapshot.value!["long"] as! Double
             let helped = snapshot.value!["helped"] as! Bool
             
             
-            let user = User(uid: uid, name: name, lat: lat, long: long, helped: helped)
+            let user = User(uid: uid!, name: name, lat: lat, long: long, helped: helped)
             self.requestingHelp?.append(user)
-            self.populateView(uid, name: name, lat: lat, long: long)
+            self.populateView(uid!, name: name, lat: lat, long: long)
             
             
             
