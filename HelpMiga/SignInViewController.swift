@@ -76,7 +76,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                 FIRAuth.auth()?.createUserWithEmail(email!, password: password!, completion: { user, error in
                     
                     if error != nil {
-                        
+                        self.myActivityIndicator.stopAnimating()
                         if let errorCode = FIRAuthErrorCode(rawValue: error!.code) {
                             switch errorCode {
                             case .ErrorCodeInvalidCredential:
@@ -108,8 +108,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                         // uploading the id and selfie picture
                         let dataIDImage = UIImageJPEGRepresentation(self.idImageView.image!, 1.0)
                         let dataSelfieImage = UIImageJPEGRepresentation(self.selfieImageView.image!, 1.0)
-                        let upload = self.userDAO.uploadImage(dataIDImage!, userID: uid, userName: username!, imageName: "id")
                         let upload2 = self.userDAO.uploadImage(dataSelfieImage!, userID: uid, userName: username!, imageName: "selfie")
+                        let upload = self.userDAO.uploadImage(dataIDImage!, userID: uid, userName: username!, imageName: "id")
+
                         if upload && upload2 {
                             print("*** UPLOADED ***")
                         } else {
