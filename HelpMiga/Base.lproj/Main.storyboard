@@ -187,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280" y="318"/>
+            <point key="canvasLocation" x="2371" y="1449"/>
         </scene>
         <!--Requests-->
         <scene sceneID="bBJ-s6-NfQ">
@@ -915,11 +915,12 @@
                         <outlet property="profileImageView" destination="L5s-UF-9m9" id="Ry8-E4-ewx"/>
                         <outlet property="profileNameTextfield" destination="CkG-xs-RAc" id="OSI-Vw-WIK"/>
                         <outlet property="profilePhoneTextField" destination="eyf-Z4-ppv" id="LaZ-we-AtP"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="logOutSegue" id="kII-Rj-f0v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBk-hh-BkE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1740" y="1346"/>
+            <point key="canvasLocation" x="1625" y="1368"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7v9-rg-MdD">
@@ -1156,4 +1157,7 @@
         <image name="tabbar_requests" width="27" height="25"/>
         <image name="user" width="220" height="220"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kII-Rj-f0v"/>
+    </inferredMetricsTieBreakers>
 </document>

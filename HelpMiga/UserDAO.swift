@@ -63,7 +63,8 @@ class UserDAO: DataService {
 //            let long = snapshot.value!["long"]
 //            let cel = snapshot.value!["cel"]
 //            
-//        
+//
+//
 //        
 //        })
 //        
@@ -133,9 +134,10 @@ class UserDAO: DataService {
     }
     
     func finishRequest() {
-        
+    
+    
+    
     }
-
     
     // MARK: get userdao singleton
     
