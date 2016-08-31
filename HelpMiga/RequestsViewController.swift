@@ -58,6 +58,16 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
             let user = User(uid: uid!, name: name, lat: lat, long: long, helped: helped)
             self.requestingHelp?.append(user)
             self.populateView(uid!, name: name, lat: lat, long: long)
+            
+            self.requestsBG.hidden = false
+            self.requestedHelpMapView.hidden = false
+            self.requestedHelpDistance.hidden = false
+            self.requestedHelpImageView.hidden = false
+            self.requestedHelpName.hidden = false
+            
+            self.noRequestsLabel.hidden = true
+            self.logo.hidden = true
+            
         })
     }
     

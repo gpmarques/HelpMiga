@@ -122,7 +122,7 @@ class UserDAO: DataService {
     func downloadImageData(uid: String, name: String) -> NSData? {
     
         var imageData: NSData?
-        let selfieRef = storage.child(name+uid+"/"+"selfie.jpg")
+        let selfieRef = storage.child(name+uid+"/"+"/selfie.jpg")
         selfieRef.dataWithMaxSize(10 * 1024 * 1024, completion: { (data, error) in
             
             if error != nil {

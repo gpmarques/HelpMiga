@@ -80,6 +80,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             
             guard let data = self.userDAO.downloadImageData(uid, name: self.profileNameTextfield.text!) else {return}
             self.profileImageView.image = UIImage(data: data)
+            self.myActivityIndicator.stopAnimating()
             
         }) { (error) in
             print(error.localizedDescription)
