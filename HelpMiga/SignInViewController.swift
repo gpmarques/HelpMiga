@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 extension UIViewController {
     func showAlert(title: String, msg: String, actionButton: String
@@ -66,6 +67,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let email = emailTextField.text
         let password = passwordTextField.text
         let confPassword = repeatPasswordTextField.text
+        let cel = phoneTextField.text!
         
         if email != "" && password != "" && confPassword != "" && username != "" {
             
@@ -100,7 +102,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                     } else if user != nil {
                         // creating user in the realtime database and sending email verification
                         let uid = user!.uid
-                        self.userDAO.createUser(uid, name: username!, email: email!, cel: "0000-0000", lat: 0, long: 0, approved: false)
+                        self.userDAO.createUser(uid, name: username!, email: email!, cel: cel, lat: 0, long: 0, approved: false)
                         user!.sendEmailVerificationWithCompletion(nil)
                         
                         // uploading the id and selfie picture

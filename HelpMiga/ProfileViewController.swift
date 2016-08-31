@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
     @IBAction func logOutButton(sender: AnyObject) {
         // segue para a tela de login
         let auth = userDAO.getAuthSingleton
-        try! auth.signOut()
+        try! auth().signOut()
         
     }
     

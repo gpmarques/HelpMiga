@@ -20,7 +20,7 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var noRequestsLabel: UILabel!
     @IBOutlet weak var logo: UIImageView!
     var userDAO: UserDAO!
-    var helper: User?
+    var requestingHelp: [User]?
 
     @IBAction func callRequestedHelpButton(sender: AnyObject) {
     }
@@ -51,17 +51,16 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
             let uid = snapshot.value!["id"] as! String
             let name = snapshot.value!["name"] as! String
             let lat = snapshot.value!["lat"] as! Double
-            let long = snapshot.value!["lat"] as! Double
-            let time = snapshot.value!["lat"] as! Double
+            let long = snapshot.value!["long"] as! Double
             let helped = snapshot.value!["helped"] as! Bool
             
-            self.helper = User(uid: uid, name: name, lat: lat, long: long, time: time, helped: helped)
+            let user = User(uid: uid, name: name, lat: lat, long: long, helped: helped)
+            self.requestingHelp?.append(user)
             
         })
     }
     
-    private func checkUser() {
-        
+    private func checkHelper() {
         
         
         

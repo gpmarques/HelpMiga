@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseStorage
+import FirebaseAuth
 
 class UserDAO: DataService {
 
@@ -50,24 +51,23 @@ class UserDAO: DataService {
         }
     }
     
-    func getUserInfo() -> User {
-        
-        let currentUser = getCurrentUser()
-        let uid = currentUser?.uid
-        
-        ref.child("users").child(uid!).observeEventType(.Value, withBlock: {snapshot in
-            
-            let name = snapshot.value!["name"]
-            let lat = snapshot.value!["lat"]
-            let long = snapshot.value!["long"]
-            let cel = snapshot.value!["cel"]
-            
-            
-        
-        
-        })
-        
-    }
+//    func getUserInfo() -> User {
+//        
+//        let currentUser = getCurrentUser()
+//        let uid = currentUser?.uid
+//        
+//        ref.child("users").child(uid!).observeEventType(.Value, withBlock: {snapshot in
+//            
+//            let name = snapshot.value!["name"]
+//            let lat = snapshot.value!["lat"]
+//            let long = snapshot.value!["long"]
+//            let cel = snapshot.value!["cel"]
+//            
+//        
+//        
+//        })
+//        
+//    }
     
     func uploadImage(imageData: NSData, userID: String, userName: String, imageName: String) -> Bool {
         
@@ -124,11 +124,15 @@ class UserDAO: DataService {
         
     }
     
-    func askHelp() {
-    
-        let userDic = ["username": name, "email": email, "cel": cel, "lat": lat, "long": long, "approved": approved, "help": false]
-        ref.child("users").child(uid).setValue(userDic)
+    func askHelp(uid: String, name: String, cel: String, lat: Double, long: Double) {
         
+        let sosDate = Int(NSDate.timeIntervalSinceReferenceDate())
+        let sosKey = name+uid+String(sosDate)
+        let userDic = ["uid": uid,"username": name, "cel": cel, "lat": lat, "long": long, "helped": false]
+        ref.child("sos").child(sosKey).setValue(userDic)
+    }
+    
+    func finishRequest() {
         
     }
 

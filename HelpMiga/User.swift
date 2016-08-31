@@ -11,20 +11,20 @@ import Foundation
 class User {
     
     var uid, name, email, cel: String?
-    var lat, long, time: Double?
-    var approved, helped: Bool?
+    var lat, long: Double?
+    var helped: Bool?
     
-    init(name: String, email: String, cel: String, lat: Double, long: Double, approved: Bool) {
+    init(uid: String, name: String, email: String, cel: String, lat: Double, long: Double) {
         
+        self.uid = uid
         self.name = name
         self.email = email
         self.cel = cel
         self.lat = lat
         self.long = long
-        self.approved = approved
     }
     
-    init(uid: String, name: String, lat: Double, long: Double, time: Double, helped: Bool) {
+    init(uid: String, name: String, lat: Double, long: Double, helped: Bool) {
         
         self.name = name
         self.lat = lat

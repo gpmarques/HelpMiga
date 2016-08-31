@@ -30,17 +30,17 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     @IBOutlet weak var askHelpOutlet: UIButton!
     
     var userDAO = UserDAO.getSingleton()
+    var user: User!
     
     @IBAction func askHelpButton(sender: AnyObject) {
         interfaceChangesWhenAskHelpClicked(sender)
-        let ref = userDAO.getRTDBSingleton()
-        ref.child("sos")
-
+        userDAO.askHelp(user.uid!, name: user.name!, cel: user.cel!, lat: user.lat!, long: user.long!)
+        
     }
     
     @IBAction func closeRequestButton(sender: AnyObject) {
         interfaceChangesWhenCloseRequestClicked(sender)
-        userDAO.userHelp(false)
+        //userDAO.userHelp(false)
 
     }
   
@@ -216,6 +216,21 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
 //            locationManager!.requestWhenInUseAuthorization()
             locationManager!.requestAlwaysAuthorization()
         }
+        
+        let ref = userDAO.getRTDBSingleton()
+        let currentUser = userDAO.getCurrentUser()
+        let uid = currentUser?.uid
+        ref.child("users").child(uid!).observeEventType(.Value, withBlock: {snapshot in
+            
+            let name = snapshot.value!["username"] as! String
+            let lat = snapshot.value!["lat"] as! Double
+            let long = snapshot.value!["long"] as! Double
+            let cel = snapshot.value!["cel"] as! String
+            let email = snapshot.value!["email"] as! String
+            
+            self.user = User(uid: uid!,name: name, email: email, cel: cel, lat: lat, long: long)
+            
+        })
         
     }
     

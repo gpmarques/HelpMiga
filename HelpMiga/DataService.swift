@@ -9,6 +9,8 @@
 import Foundation
 import Firebase
 import FirebaseStorage
+import FirebaseAuth
+import FirebaseDatabase
 
 class DataService {
     
