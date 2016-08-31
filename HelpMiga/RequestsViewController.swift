@@ -49,7 +49,7 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         
         sosQuery.observeEventType(.ChildAdded, withBlock: { (snapshot) in
             
-            let name = snapshot.value!["name"] as! String
+            let name = snapshot.value!["username"] as! String
             let lat = snapshot.value!["lat"] as! Double
             let long = snapshot.value!["long"] as! Double
             let helped = snapshot.value!["helped"] as! Bool
@@ -58,9 +58,6 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
             let user = User(uid: uid!, name: name, lat: lat, long: long, helped: helped)
             self.requestingHelp?.append(user)
             self.populateView(uid!, name: name, lat: lat, long: long)
-            
-            
-            
         })
     }
     
@@ -69,7 +66,7 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
     }
     
     private func populateView(id: String, name: String, lat: Double, long: Double) {
-        let data = self.userDAO.downloadImageData(id, name: name)
+        guard let data = self.userDAO.downloadImageData(id, name: name) else { return }
         let image = UIImage(data: data)
         
         requestedHelpName.text = name

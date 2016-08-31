@@ -78,7 +78,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             self.profileEmailTextField.text = snapshot.value!["email"] as? String
             self.profilePhoneTextField.text = snapshot.value!["cel"] as? String
             
-            let data = self.userDAO.downloadImageData(uid, name: self.profileNameTextfield.text!)
+            guard let data = self.userDAO.downloadImageData(uid, name: self.profileNameTextfield.text!) else {return}
             self.profileImageView.image = UIImage(data: data)
             
         }) { (error) in

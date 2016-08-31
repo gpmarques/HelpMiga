@@ -119,9 +119,9 @@ class UserDAO: DataService {
         return upload
     }
     
-    func downloadImageData(uid: String, name: String) -> NSData {
+    func downloadImageData(uid: String, name: String) -> NSData? {
     
-        var imageData: NSData!
+        var imageData: NSData?
         let selfieRef = storage.child(name+uid+"/"+"selfie.jpg")
         selfieRef.dataWithMaxSize(10 * 1024 * 1024, completion: { (data, error) in
             
@@ -130,11 +130,15 @@ class UserDAO: DataService {
                 print ("ERRO DOWNLOAD<<<<<<<<<<<<<<<<<<<<<<<<<<")
             } else {
                 imageData = data
-                
             }
         })
         
-        return imageData
+        if imageData != nil {
+            return imageData
+        } else {
+            return nil
+        }
+        
     }
     
     func askHelp(uid: String, name: String, cel: String, lat: Double, long: Double) {
