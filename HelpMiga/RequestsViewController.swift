@@ -45,28 +45,31 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         
         let ref = userDAO.getRTDBSingleton()
         let sosQuery = ref.child("sos")
-        let uid = userDAO.getCurrentUser()?.uid
-        
+        let currentUserID = userDAO.getCurrentUser()?.uid
         sosQuery.observeEventType(.ChildAdded, withBlock: { (snapshot) in
             
+            let uid = snapshot.value!["uid"] as! String
             let name = snapshot.value!["username"] as! String
             let lat = snapshot.value!["lat"] as! Double
             let long = snapshot.value!["long"] as! Double
             let helped = snapshot.value!["helped"] as! Bool
             
-            
-            let user = User(uid: uid!, name: name, lat: lat, long: long, helped: helped)
-            self.requestingHelp?.append(user)
-            self.populateView(uid!, name: name, lat: lat, long: long)
-            
-            self.requestsBG.hidden = false
-            self.requestedHelpMapView.hidden = false
-            self.requestedHelpDistance.hidden = false
-            self.requestedHelpImageView.hidden = false
-            self.requestedHelpName.hidden = false
-            
-            self.noRequestsLabel.hidden = true
-            self.logo.hidden = true
+            if uid != currentUserID {
+                
+                let user = User(uid: uid, name: name, lat: lat, long: long, helped: helped)
+                self.requestingHelp?.append(user)
+                self.populateView(uid, name: name, lat: lat, long: long)
+                
+                self.requestsBG.hidden = false
+                self.requestedHelpMapView.hidden = false
+                self.requestedHelpDistance.hidden = false
+                self.requestedHelpImageView.hidden = false
+                self.requestedHelpName.hidden = false
+                
+                self.noRequestsLabel.hidden = true
+                self.logo.hidden = true
+                
+            }
             
         })
     }
