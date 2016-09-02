@@ -19,8 +19,10 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var requestView: UIView!
     @IBOutlet weak var noRequestsLabel: UILabel!
     @IBOutlet weak var logo: UIImageView!
+    
     var userDAO: UserDAO!
     var requestingHelp: [UserSOS] = []
+    var destination: MKMapItem?
 
     @IBAction func callRequestedHelpButton(sender: AnyObject) {
     }
@@ -141,12 +143,68 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         
         userDAO = UserDAO.getSingleton()
         observeSOS()
+        
+        requestedHelpMapView.showsUserLocation = true
+        requestedHelpMapView.delegate = self
+        self.getDirections()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func getDirections() {
+        let request = MKDirectionsRequest()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(-22.9760044, -43.228514700000005), addressDictionary: nil))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(-22.975261, -43.22858239999999), addressDictionary: nil))
+        request.requestsAlternateRoutes = false
+        request.transportType = .Walking
+        
+        let directions = MKDirections(request: request)
+        
+        directions.calculateDirectionsWithCompletionHandler ({
+            (response: MKDirectionsResponse?, error: NSError?) in
+            
+            if error == nil {
+                let directionsResponse = response
+                let route = directionsResponse!.routes.last! as MKRoute
+                let distance = route.distance
+                print("DISTANCIA: \(distance)")
+            } else {
+                print(">>>>ERRO ROTA<<<")
+                print(error)
+            }
+        })
+        
+    }
+    
+//    func showRoute(response: MKDirectionsResponse) {
+//        
+//        for route in response.routes {
+//            
+//            requestedHelpMapView.addOverlay(route.polyline,
+//                                level: MKOverlayLevel.AboveRoads)
+//            
+//            for step in route.steps {
+//                print(step.instructions)
+//            }
+//        }
+//        let userLocation = requestedHelpMapView.userLocation
+//        let region = MKCoordinateRegionMakeWithDistance(
+//            userLocation.location!.coordinate, 2000, 2000)
+//        
+//        requestedHelpMapView.setRegion(region, animated: true)
+//    }
+    
+//    func mapView(mapView: MKMapView, rendererForOverlay
+//        overlay: MKOverlay) -> MKOverlayRenderer {
+//        let renderer = MKPolylineRenderer(overlay: overlay)
+//        
+//        renderer.strokeColor = UIColor.blueColor()
+//        renderer.lineWidth = 5.0
+//        return renderer
+//    }
 
 
 }
