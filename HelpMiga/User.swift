@@ -34,4 +34,11 @@ class User {
         
     }
     
+    init(uid: String, name: String, lat: Double, long: Double, cel: String) {
+        
+        self.name = name
+        self.lat = lat
+        self.long = long
+        self.uid = uid
+    }
 }

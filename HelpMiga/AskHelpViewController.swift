@@ -30,19 +30,40 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     @IBOutlet weak var askHelpOutlet: UIButton!
     
     var userDAO = UserDAO.getSingleton()
-    var user: User!
+    var user: User?
+    var sos: UserSOS?
+    var rescuers: [User] = []
+    
+    private func helperObserver() {
+    
+        let ref = userDAO.getRTDBSingleton()
+        let sosQuery = ref.child("rescuer")
+        sosQuery.observeEventType(.ChildAdded, withBlock: { (snapshot) in
+            
+            let rescuerID = snapshot.value!["uid"] as! String
+            let rescuerName = snapshot.value!["username"] as! String
+            let rescuerLat = snapshot.value!["lat"] as! Double
+            let rescuerLong = snapshot.value!["long"] as! Double
+            let rescuerCel = snapshot.value!["cel"] as! String
+            
+            let rescuer = User(uid: rescuerID, name: rescuerName, lat: rescuerLat, long: rescuerLong, cel: rescuerCel)
+            self.rescuers.append(rescuer)
+        
+        })
+    
+    }
     
     @IBAction func askHelpButton(sender: AnyObject) {
         interfaceChangesWhenAskHelpClicked(sender)
-        userDAO.askHelp(user.uid!, name: user.name!, cel: user.cel!, lat: user.lat!, long: user.long!)
+        if let user = self.user {
+            sos = userDAO.askHelp(user.uid!, name: user.name!, cel: user.cel!, lat: user.lat!, long: user.long!)
+        }
         
     }
     
     @IBAction func closeRequestButton(sender: AnyObject) {
         interfaceChangesWhenCloseRequestClicked(sender)
-        //userDAO.userHelp(false)
-//        userDAO.userHelp(false)
-
+        userDAO.finishRequest((sos?.uid!)!, name: (sos?.name!)!, sosDate: (sos?.sosDate)!)
     }
   
     @IBOutlet weak var acceptedRequestCollectionView: UICollectionView!
@@ -72,8 +93,19 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
         let location = locations.first!
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 500, 500)
         mapView.setRegion(coordinateRegion, animated: true)
-        locationManager?.stopUpdatingLocation()
-        locationManager = nil
+//        locationManager?.stopUpdatingLocation()
+//        locationManager = nil
+        let lat = location.coordinate.latitude
+        let long = location.coordinate.longitude
+        print("*** LATITUDE: \(lat) ***")
+        print("*** LONGITUDE: \(long) ***")
+        if let uid = userDAO.getCurrentUser()?.uid {
+                userDAO.updateUserLocation(uid, lat: lat, long: long)
+                print("!!! LATITUDE: \(lat) !!!")
+                print("!!! LONGITUDE: \(long) !!!")
+        }
+        
+        
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
@@ -83,7 +115,7 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         //mudar pro numero de pessoas que aceitaram o pedido
-        return 3
+        return rescuers.count
     }
     
     //MARK: - Collection View
@@ -99,7 +131,7 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
         cell.whiteView.layer.cornerRadius = 10
         
         //        mudar pras infos das pessoas que aceitaram o pedido
-        cell.acceptedRequestName.text = "Fulana"
+        cell.acceptedRequestName.text = rescuers[indexPath.row].name
         cell.acceptedRequestImageView.image = UIImage(named: "girl2")
         cell.acceptedRequestDistance.text = "5 minutes from you"
         return cell

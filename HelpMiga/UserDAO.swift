@@ -70,6 +70,13 @@ class UserDAO: DataService {
 //        
 //    }
     
+    func updateUserLocation(uid: String, lat: Double, long: Double) {
+        
+        ref.child("users").child(uid).child("lat").setValue(lat)
+        ref.child("users").child(uid).child("long").setValue(long)
+        
+    }
+    
     func uploadImage(imageData: NSData, userID: String, userName: String, imageName: String) -> Bool {
         
         let mediaName = userName+userID+"/"+imageName+".jpg"
@@ -119,39 +126,60 @@ class UserDAO: DataService {
         return upload
     }
     
-    func downloadImageData(uid: String, name: String) -> NSData? {
-    
-        var imageData: NSData?
-        let selfieRef = storage.child(name+uid+"/"+"/selfie.jpg")
-        selfieRef.dataWithMaxSize(10 * 1024 * 1024, completion: { (data, error) in
-            
-            if error != nil {
-                print("*** \(error?.localizedDescription) ***")
-                print ("ERRO DOWNLOAD<<<<<<<<<<<<<<<<<<<<<<<<<<")
-            } else {
-                imageData = data
-            }
-        })
-        
-        if imageData != nil {
-            return imageData
-        } else {
-            return nil
-        }
-        
-    }
-    
-    func askHelp(uid: String, name: String, cel: String, lat: Double, long: Double) {
+//    func downloadImageData(uid: String, name: String) -> NSData? {
+//    
+//        var imageData: NSData?
+//        let selfieRef = storage.child(name+uid+"/selfie.jpg")
+//        print(selfieRef)
+//        let download = selfieRef.dataWithMaxSize(2 * 1024 * 1024, completion: { (data, error) in
+//            
+//            if error != nil {
+//                print("*** \(error?.localizedDescription) ***")
+//                print ("ERRO DOWNLOAD<<<<<<<<<<<<<<<<<<<<<<<<<<")
+//            } else {
+//                imageData = data
+//            }
+//        })
+//        
+//        download.observeStatus(.Progress, handler: {snapshot in
+//        
+//            let percentComplete = 100.0 * Double((snapshot.progress?.completedUnitCount)!) / Double((snapshot.progress?.totalUnitCount)!)
+//            print(percentComplete)
+//        
+//        })
+//        
+//        if imageData != nil {
+//            print ("DOWNLOAD COMPLETO")
+//            return imageData
+//        } else {
+//            print("*** Deu ruim ***")
+//            return nil
+//        }
+//        
+//    }
+//    
+    func askHelp(uid: String, name: String, cel: String, lat: Double, long: Double) -> UserSOS {
         
         let sosDate = Int(NSDate.timeIntervalSinceReferenceDate())
         let sosKey = name+uid+String(sosDate)
-        let userDic = ["uid": uid,"username": name, "cel": cel, "lat": lat, "long": long, "helped": false]
+        let userDic = [ "uid": uid,
+                       "username": name,
+                       "cel": cel,
+                       "lat": lat,
+                       "long": long,
+                       "sosDate": String(sosDate),
+                       "helped": false ]
         ref.child("sos").child(sosKey).setValue(userDic)
+        let sos = UserSOS(uid: uid, name: name, lat: lat, long: long, sosDate: String(sosDate), helped: false)
+        
+        return sos
+        
     }
     
-    func finishRequest() {
-    
-    
+    func finishRequest(uid: String, name: String, sosDate: String) {
+        
+        let sosKey = name+uid+sosDate
+        ref.child("sos").child(sosKey).child("helped").setValue(true)
     
     }
     

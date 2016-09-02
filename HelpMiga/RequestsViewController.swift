@@ -20,7 +20,7 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var noRequestsLabel: UILabel!
     @IBOutlet weak var logo: UIImageView!
     var userDAO: UserDAO!
-    var requestingHelp: [User]?
+    var requestingHelp: [UserSOS] = []
 
     @IBAction func callRequestedHelpButton(sender: AnyObject) {
     }
@@ -32,6 +32,32 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
             return
         }
         sender.setBackgroundImage(image, forState: UIControlState.Normal)
+        let ref = userDAO.getRTDBSingleton()
+        let currentUserID = userDAO.getCurrentUser()?.uid
+        
+        ref.child("users").child(currentUserID!).observeSingleEventOfType(.Value, withBlock: { snapshot in
+        
+            let rescuerName = snapshot.value!["username"] as! String
+            let rescuerLat = snapshot.value!["lat"] as! Double
+            let rescuerLong = snapshot.value!["long"] as! Double
+            let rescuerCel = snapshot.value!["cel"] as! String
+            let queueTop = self.requestingHelp.removeAtIndex(0)
+            let name = queueTop.name
+            let uid = queueTop.uid
+            let sosDate = queueTop.sosDate
+            
+            let rescuerKey = uid!+name!+sosDate
+            
+            let rescuerDic = ["username": String(rescuerName),
+                              "lat": Double(rescuerLat),
+                              "long": Double(rescuerLong),
+                              "cel": String(rescuerCel),
+                              "uid": String(currentUserID)]
+            
+            ref.child("rescuer").child(rescuerKey).setValue(rescuerDic)
+            
+        })
+
     }
 
     @IBAction func rejectRequestButton(sender: AnyObject) {
@@ -52,12 +78,13 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
             let name = snapshot.value!["username"] as! String
             let lat = snapshot.value!["lat"] as! Double
             let long = snapshot.value!["long"] as! Double
+            let sosDate = snapshot.value!["sosDate"] as! String
             let helped = snapshot.value!["helped"] as! Bool
             
-            if uid != currentUserID {
+            if uid != currentUserID && helped {
                 
-                let user = User(uid: uid, name: name, lat: lat, long: long, helped: helped)
-                self.requestingHelp?.append(user)
+                let user = UserSOS(uid: uid, name: name, lat: lat, long: long, sosDate: sosDate, helped: helped)
+                self.requestingHelp.append(user)
                 self.populateView(uid, name: name, lat: lat, long: long)
                 
                 self.requestsBG.hidden = false
@@ -81,9 +108,18 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
     private func populateView(id: String, name: String, lat: Double, long: Double) {
         
         requestedHelpName.text = name
-        guard let data = self.userDAO.downloadImageData(id, name: name) else { return }
-        let image = UIImage(data: data)
-        requestedHelpImageView.image = image
+        let storage = self.userDAO.storage
+        let selfieRef = storage.child(name+id+"/selfie.jpg")
+        selfieRef.dataWithMaxSize(2 * 1024 * 1024, completion: { (data, error) in
+            
+            if error != nil {
+                print("*** \(error?.localizedDescription) ***")
+                print ("ERRO DOWNLOAD<<<<<<<<<<<<<<<<<<<<<<<<<<")
+            } else {
+                self.requestedHelpImageView.image = UIImage(data: data!)
+            }
+        })
+        
     }
     
     
@@ -92,9 +128,9 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         //comentar as 3 linhas abaixo pra aparecer a view do request
-//        requestView.hidden = true
-//        noRequestsLabel.hidden = false
-//        logo.hidden = false
+        requestView.hidden = true
+        noRequestsLabel.hidden = false
+        logo.hidden = false
 
         requestedHelpImageView.layer.cornerRadius = requestedHelpImageView.frame.size.width/2
         requestedHelpImageView.clipsToBounds = true

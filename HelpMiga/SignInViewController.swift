@@ -20,6 +20,31 @@ extension UIViewController {
     }
 }
 
+extension UIImage {
+    func resizeWith(percentage: CGFloat) -> UIImage? {
+        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: size.width * percentage, height: size.height * percentage)))
+        imageView.contentMode = .ScaleAspectFit
+        imageView.image = self
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        imageView.layer.renderInContext(context)
+        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return result
+    }
+//    func resizeWith(width: CGFloat) -> UIImage? {
+//        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))))
+//        imageView.contentMode = .ScaleAspectFit
+//        imageView.image = self
+//        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+//        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+//        imageView.layer.renderInContext(context)
+//        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+//        UIGraphicsEndImageContext()
+//        return result
+//    }
+}
+
 class SignInViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var botaoImagem:UIImageView = UIImageView()
@@ -106,8 +131,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                         user!.sendEmailVerificationWithCompletion(nil)
                         
                         // uploading the id and selfie picture
-                        let dataIDImage = UIImageJPEGRepresentation(self.idImageView.image!, 1.0)
-                        let dataSelfieImage = UIImageJPEGRepresentation(self.selfieImageView.image!, 1.0)
+                        let compressedIDImage = self.idImageView.image!.resizeWith(0.2)
+                        let compressedSelfieImage = self.selfieImageView.image!.resizeWith(0.2)
+                        
+                        let dataIDImage = UIImageJPEGRepresentation(compressedIDImage!, 1.0)
+                        let dataSelfieImage = UIImageJPEGRepresentation(compressedSelfieImage!, 1.0)
                         let upload2 = self.userDAO.uploadImage(dataSelfieImage!, userID: uid, userName: username!, imageName: "selfie")
                         let upload = self.userDAO.uploadImage(dataIDImage!, userID: uid, userName: username!, imageName: "id")
 

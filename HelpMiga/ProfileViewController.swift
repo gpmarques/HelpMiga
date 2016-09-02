@@ -78,8 +78,20 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIImagePicke
             self.profileEmailTextField.text = snapshot.value!["email"] as? String
             self.profilePhoneTextField.text = snapshot.value!["cel"] as? String
             
-            guard let data = self.userDAO.downloadImageData(uid, name: self.profileNameTextfield.text!) else {return}
-            self.profileImageView.image = UIImage(data: data)
+//            guard let data = self.userDAO.downloadImageData(uid, name: self.profileNameTextfield.text!) else {return}
+            let storage = self.userDAO.storage
+            let selfieRef = storage.child(self.profileNameTextfield.text!+uid+"/selfie.jpg")
+            print(selfieRef)
+            selfieRef.dataWithMaxSize(2 * 1024 * 1024, completion: { (data, error) in
+                
+                if error != nil {
+                    print("*** \(error?.localizedDescription) ***")
+                    print ("ERRO DOWNLOAD<<<<<<<<<<<<<<<<<<<<<<<<<<")
+                } else {
+                     self.profileImageView.image = UIImage(data: data!)
+                }
+            })
+           
             self.myActivityIndicator.stopAnimating()
             
         }) { (error) in
