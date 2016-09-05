@@ -228,6 +228,7 @@
 				TargetAttributes = {
 					D1FD28241D59302B0067C134 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 56YN57ZN7X;
 					};
 				};
 			};
@@ -449,10 +450,13 @@
 			baseConfigurationReference = 9A1C7FC4BB45DE14BAD88D4B /* Pods-HelpMiga.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HelpMiga/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bepid.HelpMiga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -461,10 +465,13 @@
 			baseConfigurationReference = CF2CFB485597138D2B769D67 /* Pods-HelpMiga.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HelpMiga/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bepid.HelpMiga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

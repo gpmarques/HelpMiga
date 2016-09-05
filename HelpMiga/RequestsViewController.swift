@@ -70,7 +70,6 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
     }
     
     private func observeSOS() {
-        
         let ref = userDAO.getRTDBSingleton()
         let sosQuery = ref.child("sos")
         let currentUserID = userDAO.getCurrentUser()?.uid
@@ -85,10 +84,12 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
             
             if uid != currentUserID && helped {
                 
+                print("*** ENTREI ***")
                 let user = UserSOS(uid: uid, name: name, lat: lat, long: long, sosDate: sosDate, helped: helped)
                 self.requestingHelp.append(user)
                 self.populateView(uid, name: name, lat: lat, long: long)
                 
+                self.requestView.hidden = false
                 self.requestsBG.hidden = false
                 self.requestedHelpMapView.hidden = false
                 self.requestedHelpDistance.hidden = false
@@ -146,7 +147,7 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         
         requestedHelpMapView.showsUserLocation = true
         requestedHelpMapView.delegate = self
-        self.getDirections()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -154,10 +155,10 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func getDirections() {
+    func getDirections(sourceLat: Double, sourceLong: Double, destinationLat: Double, destinationLong: Double) {
         let request = MKDirectionsRequest()
-        request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(-22.9760044, -43.228514700000005), addressDictionary: nil))
-        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(-22.975261, -43.22858239999999), addressDictionary: nil))
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(sourceLat, sourceLong), addressDictionary: nil))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2DMake(destinationLat,destinationLong), addressDictionary: nil))
         request.requestsAlternateRoutes = false
         request.transportType = .Walking
         
@@ -170,6 +171,7 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
                 let directionsResponse = response
                 let route = directionsResponse!.routes.last! as MKRoute
                 let distance = route.distance
+                let time = route.expectedTravelTime
                 print("DISTANCIA: \(distance)")
             } else {
                 print(">>>>ERRO ROTA<<<")
