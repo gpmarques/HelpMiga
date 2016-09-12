@@ -123,6 +123,8 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
             }
         })
         
+//        getDirections(, sourceLong: <#T##Double#>, destinationLat: lat, destinationLong: long)
+        
     }
     
     
@@ -131,9 +133,9 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         //comentar as 3 linhas abaixo pra aparecer a view do request
-        requestView.hidden = true
-        noRequestsLabel.hidden = false
-        logo.hidden = false
+//        requestView.hidden = true
+//        noRequestsLabel.hidden = false
+//        logo.hidden = false
 
         requestedHelpImageView.layer.cornerRadius = requestedHelpImageView.frame.size.width/2
         requestedHelpImageView.clipsToBounds = true
@@ -147,6 +149,13 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         
         requestedHelpMapView.showsUserLocation = true
         requestedHelpMapView.delegate = self
+        
+        getDirections(-22.948064874310493, sourceLong: -43.18981897962311, destinationLat: -22.947475, destinationLong: -43.182736999999975)
+        
+        let userLocation = requestedHelpMapView.userLocation
+        let region = MKCoordinateRegionMakeWithDistance(
+            userLocation.location!.coordinate, 2000, 2000)
+        requestedHelpMapView.setRegion(region, animated: true)
         
     }
 
@@ -172,13 +181,32 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
                 let route = directionsResponse!.routes.last! as MKRoute
                 let distance = route.distance
                 let time = route.expectedTravelTime
+                
+                self.requestedHelpDistance.text = "She's \(time / 60) minutes from you"
+                
                 print("DISTANCIA: \(distance)")
+                
+                self.requestedHelpMapView.addOverlay(route.polyline, level: MKOverlayLevel.AboveRoads)
+                
             } else {
                 print(">>>>ERRO ROTA<<<")
                 print(error)
             }
         })
+    }
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         
+        let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+        
+        if overlay is MKPolyline {
+//            polylineRenderer.lineDashPattern = [14,10,6,10,4,10]
+            
+            polylineRenderer.strokeColor = UIColor(red: 233, green: 30, blue: 64, alpha: 1.00)
+            polylineRenderer.lineWidth = 3
+            return polylineRenderer
+        }
+        return polylineRenderer
     }
     
 //    func showRoute(response: MKDirectionsResponse) {
