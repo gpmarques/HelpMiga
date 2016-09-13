@@ -265,6 +265,7 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
             let email = snapshot.value!["email"] as! String
             
             self.user = User.getCurrentUser()
+            self.user?.uid = uid
             self.user?.name = name
             self.user?.email = email
             self.user?.lat = lat
