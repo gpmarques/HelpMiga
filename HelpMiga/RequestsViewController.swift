@@ -54,7 +54,7 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
                               "lat": Double(rescuerLat),
                               "long": Double(rescuerLong),
                               "cel": String(rescuerCel),
-                              "uid": String(currentUserID)]
+                              "uid": String(currentUserID!)]
             
             ref.child("rescuer").child(rescuerKey).setValue(rescuerDic)
             
@@ -72,6 +72,7 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         let ref = userDAO.getRTDBSingleton()
         let sosQuery = ref.child("sos")
         let currentUserID = userDAO.getCurrentUser()?.uid
+        print("*** OBSERVING SOS ***")
         sosQuery.observeEventType(.ChildAdded, withBlock: { (snapshot) in
             
             let uid = snapshot.value!["uid"] as! String

@@ -250,6 +250,8 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
             locationManager!.requestAlwaysAuthorization()
         }
         
+        self.helperObserver()
+        
     }
     
     override func viewDidAppear(animated: Bool) {
