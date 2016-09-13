@@ -13,7 +13,8 @@ class User {
     var uid, name, email, cel: String?
     var lat, long: Double?
     var helped: Bool?
-    
+    static var currentUser: User?
+        
     init(uid: String, name: String, email: String, cel: String, lat: Double, long: Double) {
         
         self.uid = uid
@@ -22,6 +23,7 @@ class User {
         self.cel = cel
         self.lat = lat
         self.long = long
+        
     }
     
     init(uid: String, name: String, lat: Double, long: Double, helped: Bool) {
@@ -40,5 +42,9 @@ class User {
         self.lat = lat
         self.long = long
         self.uid = uid
+    }
+    
+    static func getCurrentUser() -> User {
+        return currentUser!
     }
 }

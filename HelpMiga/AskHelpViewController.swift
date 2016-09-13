@@ -250,8 +250,6 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
             locationManager!.requestAlwaysAuthorization()
         }
         
-
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -266,7 +264,13 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
             let cel = snapshot.value!["cel"] as! String
             let email = snapshot.value!["email"] as! String
             
-            self.user = User(uid: uid!,name: name, email: email, cel: cel, lat: lat, long: long)
+            self.user = User.getCurrentUser()
+            self.user?.name = name
+            self.user?.email = email
+            self.user?.lat = lat
+            self.user?.long = long
+            self.user?.email = email
+            
         })
     }
     

@@ -82,7 +82,7 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
             let sosDate = snapshot.value!["sosDate"] as! String
             let helped = snapshot.value!["helped"] as! Bool
             
-            if uid != currentUserID && helped {
+            if uid != currentUserID && !helped {
                 
                 print("*** ENTREI ***")
                 let user = UserSOS(uid: uid, name: name, lat: lat, long: long, sosDate: sosDate, helped: helped)
