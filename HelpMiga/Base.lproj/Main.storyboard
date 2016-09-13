@@ -72,12 +72,12 @@
                                         </constraints>
                                         <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwordField" translatesAutoresizingMaskIntoConstraints="NO" id="etV-zu-vpr">
                                         <rect key="frame" x="154" y="352" width="291" height="42"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helpMigaImage" translatesAutoresizingMaskIntoConstraints="NO" id="YtM-di-ebn">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoHM" translatesAutoresizingMaskIntoConstraints="NO" id="YtM-di-ebn">
                                         <rect key="frame" x="75" y="80" width="450" height="180"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-ZO-hQG">
@@ -609,7 +609,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yzJ-fe-yQy">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yzJ-fe-yQy">
                                 <rect key="frame" x="0.0" y="90" width="600" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="0.0" id="TtR-vX-een">
@@ -994,7 +994,7 @@
                                 <rect key="frame" x="257" y="261" width="84.5" height="22"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passwordField" translatesAutoresizingMaskIntoConstraints="NO" id="sdX-IM-Q4l">
                                 <rect key="frame" x="154" y="308" width="291" height="42"/>
@@ -1003,7 +1003,7 @@
                                 <rect key="frame" x="227" y="318" width="145.5" height="22"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.1176470588" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="ehu-dc-hk5">
                                 <rect key="frame" x="228" y="424" width="145" height="62"/>
@@ -1140,12 +1140,12 @@
         <image name="girl1" width="890" height="593"/>
         <image name="girl2" width="890" height="575"/>
         <image name="girl_red" width="21" height="18"/>
-        <image name="helpMigaImage" width="151" height="124"/>
         <image name="id_red" width="31" height="62"/>
         <image name="imGoingButton" width="292" height="42"/>
         <image name="loginBG" width="320" height="568"/>
         <image name="loginButton" width="116" height="42"/>
         <image name="logo" width="79" height="93"/>
+        <image name="logoHM" width="391" height="290"/>
         <image name="passwordField" width="291" height="42"/>
         <image name="phoneField" width="291" height="42"/>
         <image name="phone_red" width="16" height="14"/>
@@ -1161,6 +1161,6 @@
         <image name="user" width="220" height="220"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kII-Rj-f0v"/>
+        <segue reference="XX3-MN-DIS"/>
     </inferredMetricsTieBreakers>
 </document>

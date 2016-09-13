@@ -15,6 +15,8 @@ class AcceptedRequestCell: UICollectionViewCell {
     @IBOutlet weak var acceptedRequestName: UILabel!
     @IBOutlet weak var acceptedRequestDistance: UILabel!
     @IBAction func acceptedRequestCallButton(sender: AnyObject) {
+        let numero: NSURL = NSURL(string: "tel://552198888888")!
+        UIApplication.sharedApplication().openURL(numero)
     }
     
 //    override func awakeFromNib() {
