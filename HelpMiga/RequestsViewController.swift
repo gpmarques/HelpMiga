@@ -66,7 +66,6 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         requestView.hidden = true
         noRequestsLabel.hidden = false
         logo.hidden = false
-        
     }
     
     private func observeSOS() {
@@ -123,19 +122,20 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
             }
         })
         
-//        getDirections(, sourceLong: <#T##Double#>, destinationLat: lat, destinationLong: long)
+        guard let sourceLat = User.currentUser.lat else { return }
+        guard let sourceLong = User.currentUser.long else { return }
+        
+        getDirections(sourceLat , sourceLong: sourceLong, destinationLat: lat, destinationLong: long)
         
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //comentar as 3 linhas abaixo pra aparecer a view do request
-//        requestView.hidden = true
-//        noRequestsLabel.hidden = false
-//        logo.hidden = false
+        requestView.hidden = true
+        noRequestsLabel.hidden = false
+        logo.hidden = false
 
         requestedHelpImageView.layer.cornerRadius = requestedHelpImageView.frame.size.width/2
         requestedHelpImageView.clipsToBounds = true
@@ -150,11 +150,10 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         requestedHelpMapView.showsUserLocation = true
         requestedHelpMapView.delegate = self
         
-        getDirections(-22.948064874310493, sourceLong: -43.18981897962311, destinationLat: -22.947475, destinationLong: -43.182736999999975)
-        
-        let userLocation = requestedHelpMapView.userLocation
-        let region = MKCoordinateRegionMakeWithDistance(
-            userLocation.location!.coordinate, 2000, 2000)
+        guard let lat = User.currentUser.lat else { return }
+        guard let long = User.currentUser.long else { return }
+        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        let region = MKCoordinateRegionMakeWithDistance(coordinate, 2000, 2000)
         requestedHelpMapView.setRegion(region, animated: true)
         
     }

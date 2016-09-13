@@ -270,6 +270,7 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
             self.user?.lat = lat
             self.user?.long = long
             self.user?.email = email
+            self.user!.cel = cel
             
         })
     }
