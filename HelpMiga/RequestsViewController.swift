@@ -66,6 +66,9 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         requestView.hidden = true
         noRequestsLabel.hidden = false
         logo.hidden = false
+        
+        //ALERTVIEW PERGUNTANDO SE VAI REALMENTE CANCELAR
+        //CANCELAR NO DATABASE
     }
     
     private func observeSOS() {
@@ -126,8 +129,8 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         guard let sourceLat = User.currentUser.lat else { return }
         guard let sourceLong = User.currentUser.long else { return }
         
-        getDirections(sourceLat , sourceLong: sourceLong, destinationLat: lat, destinationLong: long)
-        
+        getDirections(sourceLat , sourceLong: sourceLong, destinationLat: -22.975261, destinationLong: -43.22858239999999)
+        addPin(-22.975261, destinationLong: -43.22858239999999)
     }
     
     override func viewDidLoad() {
@@ -178,11 +181,14 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
             
             if error == nil {
                 let directionsResponse = response
+//                let quickestRouteForSegment: MKRoute =
+//                    (response?.routes.sort({$0.expectedTravelTime <
+//                        $1.expectedTravelTime})[0])!
                 let route = directionsResponse!.routes.last! as MKRoute
                 let distance = route.distance
                 let time = route.expectedTravelTime
                 
-                self.requestedHelpDistance.text = "She's \(time / 60) minutes from you"
+                self.requestedHelpDistance.text = "She's \(Int (time / 60)) minutes from you"
                 
                 print("DISTANCIA: \(distance)")
                 
@@ -196,17 +202,57 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
-        
+
         let polylineRenderer = MKPolylineRenderer(overlay: overlay)
         
         if overlay is MKPolyline {
 //            polylineRenderer.lineDashPattern = [14,10,6,10,4,10]
-            
-            polylineRenderer.strokeColor = UIColor(red: 233, green: 30, blue: 64, alpha: 1.00)
-            polylineRenderer.lineWidth = 3
+            polylineRenderer.strokeColor = UIColor(red:0.91, green:0.12, blue:0.25, alpha:1.0)//            polylineRenderer.strokeColor = UIColor.magentaColor()
+            polylineRenderer.lineWidth = 5
             return polylineRenderer
         }
         return polylineRenderer
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        // Don't want to show a custom image if the annotation is the user's location.
+        guard !annotation.isKindOfClass(MKUserLocation) else {
+            return nil
+        }
+        
+        let annotationIdentifier = "AnnotationIdentifier"
+        
+        var annotationView: MKAnnotationView?
+        if let dequeuedAnnotationView = requestedHelpMapView.dequeueReusableAnnotationViewWithIdentifier(annotationIdentifier) {
+            annotationView = dequeuedAnnotationView
+            annotationView?.annotation = annotation
+        }
+        else {
+            let av = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            av.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+            annotationView = av
+        }
+        
+        if let annotationView = annotationView {
+            // Configure your annotation view here
+            annotationView.canShowCallout = true
+            annotationView.image = UIImage(named: "pin")
+        }
+        
+        return annotationView
+    }
+    
+
+    
+    
+    func addPin(destinationLat: Double, destinationLong: Double) {
+        let annotation = MKPointAnnotation()
+//        let pin = MKAnnotationView()
+        
+        let centerCoordinate = CLLocationCoordinate2D(latitude: destinationLat, longitude: destinationLong)
+        annotation.coordinate = centerCoordinate
+        //        annotation.title = "Title"
+        requestedHelpMapView.addAnnotation(annotation)
     }
     
 //    func showRoute(response: MKDirectionsResponse) {
