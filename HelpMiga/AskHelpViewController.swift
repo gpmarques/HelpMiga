@@ -48,6 +48,7 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
             
             let rescuer = User(uid: rescuerID, name: rescuerName, lat: rescuerLat, long: rescuerLong, cel: rescuerCel)
             self.rescuers.append(rescuer)
+            self.acceptedRequestCollectionView.reloadData()
         
         })
     
@@ -64,6 +65,8 @@ class AskHelpViewController: UIViewController, MKMapViewDelegate, UICollectionVi
     @IBAction func closeRequestButton(sender: AnyObject) {
         interfaceChangesWhenCloseRequestClicked(sender)
         userDAO.finishRequest((sos?.uid!)!, name: (sos?.name!)!, sosDate: (sos?.sosDate)!)
+        rescuers.removeAll()
+        self.acceptedRequestCollectionView.reloadData()
     }
   
     @IBOutlet weak var acceptedRequestCollectionView: UICollectionView!
