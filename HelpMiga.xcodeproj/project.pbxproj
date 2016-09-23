@@ -228,9 +228,8 @@
 				TargetAttributes = {
 					D1FD28241D59302B0067C134 = {
 						CreatedOnToolsVersion = 7.3.1;
-
-						DevelopmentTeam = 7S5BW22U4Y;
-
+						DevelopmentTeam = 56YN57ZN7X;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -459,6 +458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bepid.HelpMiga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -474,6 +474,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bepid.HelpMiga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

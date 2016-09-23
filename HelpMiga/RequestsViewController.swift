@@ -66,7 +66,6 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         requestView.hidden = true
         noRequestsLabel.hidden = false
         logo.hidden = false
-        
         //ALERTVIEW PERGUNTANDO SE VAI REALMENTE CANCELAR
         //CANCELAR NO DATABASE
     }
@@ -186,9 +185,9 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
 //                        $1.expectedTravelTime})[0])!
                 let route = directionsResponse!.routes.last! as MKRoute
                 let distance = route.distance
-                let time = route.expectedTravelTime
+                let time = Int(route.expectedTravelTime)
                 
-                self.requestedHelpDistance.text = "She's \(Int (time / 60)) minutes from you"
+                self.requestedHelpDistance.text = "She's \(time / 60) minutes from you"
                 
                 print("DISTANCIA: \(distance)")
                 
@@ -241,9 +240,6 @@ class RequestsViewController: UIViewController, MKMapViewDelegate {
         
         return annotationView
     }
-    
-
-    
     
     func addPin(destinationLat: Double, destinationLong: Double) {
         let annotation = MKPointAnnotation()
